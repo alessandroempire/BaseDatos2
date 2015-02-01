@@ -9,8 +9,11 @@ package rabais;
 import java.sql.*; 
 
 /**
- *
- * @author alessandro
+ * @Autores:
+ * Alessandro La Corte
+ * Catherine Lollett 
+ * 
+ * @Descripcion:
  */
 public class Rabais {
     

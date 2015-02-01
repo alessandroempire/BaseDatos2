@@ -7,9 +7,28 @@
 package rabais;
 
 /**
- *
- * @author alessandro
+ * @Autores:
+ * Alessandro La Corte
+ * Catherine Lollett 
+ * 
+ * @Descripcion:
  */
 public class Categoria {
+    private String nombre; 
     
+    //Constructor
+    public Categoria(){}
+    
+    //Constructor
+    public Categoria(String category){
+        nombre = category;
+    }
+    
+    public String get_Nombre(){
+        return nombre; 
+    }
+    
+    public void set_Nombre(String name){
+        this.nombre = name; 
+    }
 }

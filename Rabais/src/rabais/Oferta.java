@@ -7,8 +7,11 @@
 package rabais;
 
 /**
- *
- * @author alessandro
+ * @Autores:
+ * Alessandro La Corte
+ * Catherine Lollett 
+ * 
+ * @Descripcion:
  */
 public class Oferta {
     

@@ -7,17 +7,39 @@
 package rabais;
 
 /**
- *
- * @author alessandro
+ * @Autores:
+ * Alessandro La Corte
+ * Catherine Lollett 
+ * 
+ * @Descripcion:
  */
 public class Coordenadas {
     //Atributos
-    DMS latitude;
-    DMS longitude; 
+    private DMS latitude;
+    private DMS longitude; 
+    
+    //Constructor
+    public Coordenadas(){}
     
     //Constructor
     public Coordenadas(DMS la, DMS lo){
         latitude  = la;
         longitude = lo;
+    }
+    
+    public DMS get_latitud(){
+        return latitude;
+    }
+    
+    public void set_latitud(DMS la){
+        this.latitude = la;
+    }
+    
+    public DMS get_longitude(){
+        return longitude;
+    }
+    
+    public void set_longitude(DMS lo){
+        this.longitude = lo;
     }
 }
