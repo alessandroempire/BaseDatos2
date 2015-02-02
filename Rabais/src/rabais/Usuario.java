@@ -7,8 +7,8 @@
 package rabais;
 
 import java.sql.Date; 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @Autores:
@@ -23,7 +23,7 @@ public class Usuario {
     private String           name;
     private String           last_name;
     private Date             birth_date;
-    private List<String>     email;                 //1 o mas correos. 
+    private Set<String>      email;                 //1 o mas correos. 
     private int              promocional_money;
     private Coordenadas      coordinates; 
     
@@ -37,7 +37,7 @@ public class Usuario {
         name              = nombre;
         last_name         = apellido;
         birth_date        = fecha;
-        email             = new ArrayList<>();
+        email             = new HashSet<>();
         email.add(correo);
         promocional_money = dinero;
         coordinates       = coor; 
@@ -83,13 +83,13 @@ public class Usuario {
         this.birth_date = birth_date;
     }
     
-    public List<String> get_email(){
+    public Set<String> get_email(){
         return email; 
     }
     
     public void set_email(String email){
         if (this.email.isEmpty())
-            this.email = new ArrayList<>();
+            this.email = new HashSet<>();
         
         this.email.add(email);
     }

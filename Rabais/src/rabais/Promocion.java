@@ -6,8 +6,8 @@
 
 package rabais;
 
-import java.util.ArrayList;
-import java.util.List; 
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @Autores:
@@ -20,16 +20,35 @@ public class Promocion {
     private String       nombre_promocion;
     private String       descripcion_breve;
     private String       descripcion_completa;
-    private String       descripcion_adicional;
+    private String       descripcion_adicional; //cardinalidad 0 1
     private double       monto_original;
-    private List<String> palabras_claves; 
-    private List<String> pagina_web;
+    private Set<String>  palabras_claves; 
+    private Set<String>  pagina_web;
     private int          cantidad_disponible;
     private double       puntaje_total; 
     //imagenes?
     
     //Constructor
     public Promocion(){}
+    
+    //Constructor
+    public Promocion(String nombre_promocion, String descripcion_breve,
+                        String descripcion_completa, String descripcion_adicional,
+                        double monto_original, String palabras_claves,
+                        String pagina_web, int cantidad_disponible,
+                        double puntaje_total){
+        this.nombre_promocion      = nombre_promocion;
+        this.descripcion_breve     = descripcion_breve;
+        this.descripcion_completa  = descripcion_completa;
+        this.descripcion_adicional = descripcion_adicional;
+        this.monto_original        = monto_original;
+        this.palabras_claves       = new HashSet<>();
+        this.palabras_claves.add(palabras_claves);
+        this.pagina_web            = new HashSet<>();
+        this.pagina_web.add(pagina_web);
+        this.cantidad_disponible   = cantidad_disponible;
+        this.puntaje_total         = puntaje_total;
+    }
     
     public String get_nombre_promocion(){
         return nombre_promocion;
@@ -71,13 +90,13 @@ public class Promocion {
         this.monto_original = monto_original;
     }
     
-    public List<String> get_palabras_claves(){
+    public Set<String> get_palabras_claves(){
         return palabras_claves;
     }
     
     public void set_palabras_claves(String palabras_claves){
         if (this.palabras_claves.isEmpty())
-            this.palabras_claves = new ArrayList<>();
+            this.palabras_claves = new HashSet<>();
         
         if (this.palabras_claves.size() > 6)
             System.out.println("No se pueden agregar mas de 6 palabras claves");
@@ -85,13 +104,13 @@ public class Promocion {
             this.palabras_claves.add(palabras_claves);
     }
     
-    public List<String> get_pagina_web(){
+    public Set<String> get_pagina_web(){
         return pagina_web;
     }
     
     public void set_pagina_web(String pagina_web){
         if (this.pagina_web.isEmpty())
-            this.pagina_web = new ArrayList<>();
+            this.pagina_web = new HashSet<>();
         
         this.pagina_web.add(pagina_web);
     }

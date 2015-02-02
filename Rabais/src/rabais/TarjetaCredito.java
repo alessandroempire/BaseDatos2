@@ -23,6 +23,13 @@ public class TarjetaCredito {
     //Constructor
     public TarjetaCredito(){}
     
+    //Constructor
+    public TarjetaCredito(int[] numero, String tarjetahabiente, String tipo){
+        this.numero          = Arrays.copyOf(numero, numero.length);
+        this.tarjetahabiente = tarjetahabiente;
+        this.tipo            = tipo;
+    }
+    
     public int[] get_numero(){
         return numero;
     }

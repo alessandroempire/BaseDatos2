@@ -6,6 +6,8 @@
 
 package rabais;
 
+import java.util.Arrays;
+
 /**
  * @Autores:
  * Alessandro La Corte
@@ -23,7 +25,15 @@ public class Direccion {
     //Constructor
     public Direccion(){}
     
-    //Constructor con todos los argumentos?
+    //Constructor con todos los argumentos
+    public Direccion(String calle, String urbanizacion, String nombre,
+                        int numero, int[] codigo_postal){
+        this.calle = calle;
+        this.urbanizacion = urbanizacion;
+        this.nombre = nombre;
+        this.numero = numero;
+        this.codigo_postal = Arrays.copyOf(codigo_postal, codigo_postal.length);
+    }
     
     public String get_calle(){
         return calle;

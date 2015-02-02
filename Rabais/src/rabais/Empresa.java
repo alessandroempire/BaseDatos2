@@ -7,8 +7,8 @@
 package rabais;
 
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List; 
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @Autores:
@@ -20,8 +20,8 @@ import java.util.List;
 public class Empresa {
     private String       nombre;
     private String       razon_social;
-    private List<int[]>  telefonos;
-    private List<String> correos;
+    private Set<int[]>   telefonos;
+    private Set<String>  correos;
     private int          numero_clientes;
     private Direccion    address; 
     
@@ -31,14 +31,14 @@ public class Empresa {
     //constructor 
     public Empresa(String name, String social, int[] tlf, String email,
                     int num, Direccion dir){
-        nombre = name;
-        razon_social = social;
-        telefonos = new ArrayList<>();
+        nombre          = name;
+        razon_social    = social;
+        telefonos       = new HashSet<>();
         telefonos.add(Arrays.copyOf(tlf, tlf.length));
-        correos = new ArrayList<>();
+        correos         = new HashSet<>();
         correos.add(email);
         numero_clientes = num;
-        address = dir;         
+        address         = dir;         
     }
     
     public String get_nombre(){
@@ -57,24 +57,24 @@ public class Empresa {
         this.razon_social = razon_social; 
     }
     
-    public List<int[]> get_telefonos(){
+    public Set<int[]> get_telefonos(){
         return telefonos;
     }
     
     public void set_telefonos(int[] tlf){
         if (this.telefonos.isEmpty())
-            this.telefonos = new ArrayList<>();
+            this.telefonos = new HashSet<>();
         
         this.telefonos.add(Arrays.copyOf(tlf, tlf.length));
     }
     
-    public List<String> get_correos(){
+    public Set<String> get_correos(){
         return correos;
     }
     
     public void set_correos(String email){
         if (this.correos.isEmpty())
-            this.correos = new ArrayList<>();
+            this.correos = new HashSet<>();
         
         this.correos.add(email);
     }
