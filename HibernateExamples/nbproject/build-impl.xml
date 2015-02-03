@@ -19,7 +19,7 @@ is divided into following sections:
   - cleanup
 
         -->
-<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="Ejemplos-impl">
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="HibernateExamples-impl">
     <fail message="Please build using Ant 1.8.0 or higher.">
         <condition>
             <not>
@@ -118,13 +118,36 @@ is divided into following sections:
             </and>
         </condition>
         <condition property="have.tests">
-            <or>
-                <available file="${test.src.dir}"/>
-            </or>
+            <or/>
         </condition>
         <condition property="have.sources">
             <or>
                 <available file="${src.dir}"/>
+                <available file="${1. UniqueClass@Annotations.dir}"/>
+                <available file="${2. OneToOne@Annotations1.dir}"/>
+                <available file="${2.1. OneToOne@Annotations2.dir}"/>
+                <available file="${src2.dir}"/>
+                <available file="${3. ManyToOne@Annotations1.dir}"/>
+                <available file="${3.1. OneToMany@Annotations2Bi.dir}"/>
+                <available file="${3.2. OneToMany@Annotations2Uni.dir}"/>
+                <available file="${3.3. OneToMany_XMLMapping2Bi.dir}"/>
+                <available file="${4. ManyToMany@Annotations.dir}"/>
+                <available file="${src3.dir}"/>
+                <available file="${5.0. Herencia@Annotations1.dir}"/>
+                <available file="${5.1. Herencia@Annotations(1Table).dir}"/>
+                <available file="${src4.dir}"/>
+                <available file="${5.3. Herencia@Annotations(Joined subclass).dir}"/>
+                <available file="${src5.dir}"/>
+                <available file="${5.5. Herencia@Annotations(PerConcreteClass).dir}"/>
+                <available file="${5.6. Herencia_XMLMapping(PerConcreteClass).dir}"/>
+                <available file="${6. SelfJoin(OneToMany)@Annotations.dir}"/>
+                <available file="${6.1. SelfJoin(OneToMany)_XMLMapping.dir}"/>
+                <available file="${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}"/>
+                <available file="${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}"/>
+                <available file="${src6.dir}"/>
+                <available file="${7. PruebaJueves.dir}"/>
+                <available file="${src7.dir}"/>
+                <available file="${src8.dir}"/>
             </or>
         </condition>
         <condition property="netbeans.home+have.tests">
@@ -221,7 +244,31 @@ is divided into following sections:
     </target>
     <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init" name="-init-check">
         <fail unless="src.dir">Must set src.dir</fail>
-        <fail unless="test.src.dir">Must set test.src.dir</fail>
+        <fail unless="1. UniqueClass@Annotations.dir">Must set 1. UniqueClass@Annotations.dir</fail>
+        <fail unless="2. OneToOne@Annotations1.dir">Must set 2. OneToOne@Annotations1.dir</fail>
+        <fail unless="2.1. OneToOne@Annotations2.dir">Must set 2.1. OneToOne@Annotations2.dir</fail>
+        <fail unless="src2.dir">Must set src2.dir</fail>
+        <fail unless="3. ManyToOne@Annotations1.dir">Must set 3. ManyToOne@Annotations1.dir</fail>
+        <fail unless="3.1. OneToMany@Annotations2Bi.dir">Must set 3.1. OneToMany@Annotations2Bi.dir</fail>
+        <fail unless="3.2. OneToMany@Annotations2Uni.dir">Must set 3.2. OneToMany@Annotations2Uni.dir</fail>
+        <fail unless="3.3. OneToMany_XMLMapping2Bi.dir">Must set 3.3. OneToMany_XMLMapping2Bi.dir</fail>
+        <fail unless="4. ManyToMany@Annotations.dir">Must set 4. ManyToMany@Annotations.dir</fail>
+        <fail unless="src3.dir">Must set src3.dir</fail>
+        <fail unless="5.0. Herencia@Annotations1.dir">Must set 5.0. Herencia@Annotations1.dir</fail>
+        <fail unless="5.1. Herencia@Annotations(1Table).dir">Must set 5.1. Herencia@Annotations(1Table).dir</fail>
+        <fail unless="src4.dir">Must set src4.dir</fail>
+        <fail unless="5.3. Herencia@Annotations(Joined subclass).dir">Must set 5.3. Herencia@Annotations(Joined subclass).dir</fail>
+        <fail unless="src5.dir">Must set src5.dir</fail>
+        <fail unless="5.5. Herencia@Annotations(PerConcreteClass).dir">Must set 5.5. Herencia@Annotations(PerConcreteClass).dir</fail>
+        <fail unless="5.6. Herencia_XMLMapping(PerConcreteClass).dir">Must set 5.6. Herencia_XMLMapping(PerConcreteClass).dir</fail>
+        <fail unless="6. SelfJoin(OneToMany)@Annotations.dir">Must set 6. SelfJoin(OneToMany)@Annotations.dir</fail>
+        <fail unless="6.1. SelfJoin(OneToMany)_XMLMapping.dir">Must set 6.1. SelfJoin(OneToMany)_XMLMapping.dir</fail>
+        <fail unless="6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir">Must set 6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir</fail>
+        <fail unless="6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir">Must set 6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir</fail>
+        <fail unless="src6.dir">Must set src6.dir</fail>
+        <fail unless="7. PruebaJueves.dir">Must set 7. PruebaJueves.dir</fail>
+        <fail unless="src7.dir">Must set src7.dir</fail>
+        <fail unless="src8.dir">Must set src8.dir</fail>
         <fail unless="build.dir">Must set build.dir</fail>
         <fail unless="dist.dir">Must set dist.dir</fail>
         <fail unless="build.classes.dir">Must set build.classes.dir</fail>
@@ -242,7 +289,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-macrodef-javac-with-processors">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.dir}" name="srcdir"/>
+            <attribute default="${src.dir}:${1. UniqueClass@Annotations.dir}:${2. OneToOne@Annotations1.dir}:${2.1. OneToOne@Annotations2.dir}:${src2.dir}:${3. ManyToOne@Annotations1.dir}:${3.1. OneToMany@Annotations2Bi.dir}:${3.2. OneToMany@Annotations2Uni.dir}:${3.3. OneToMany_XMLMapping2Bi.dir}:${4. ManyToMany@Annotations.dir}:${src3.dir}:${5.0. Herencia@Annotations1.dir}:${5.1. Herencia@Annotations(1Table).dir}:${src4.dir}:${5.3. Herencia@Annotations(Joined subclass).dir}:${src5.dir}:${5.5. Herencia@Annotations(PerConcreteClass).dir}:${5.6. Herencia_XMLMapping(PerConcreteClass).dir}:${6. SelfJoin(OneToMany)@Annotations.dir}:${6.1. SelfJoin(OneToMany)_XMLMapping.dir}:${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}:${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}:${src6.dir}:${7. PruebaJueves.dir}:${src7.dir}:${src8.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.processorpath}" name="processorpath"/>
@@ -283,7 +330,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties" name="-init-macrodef-javac-without-processors" unless="ap.supported.internal">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.dir}" name="srcdir"/>
+            <attribute default="${src.dir}:${1. UniqueClass@Annotations.dir}:${2. OneToOne@Annotations1.dir}:${2.1. OneToOne@Annotations2.dir}:${src2.dir}:${3. ManyToOne@Annotations1.dir}:${3.1. OneToMany@Annotations2Bi.dir}:${3.2. OneToMany@Annotations2Uni.dir}:${3.3. OneToMany_XMLMapping2Bi.dir}:${4. ManyToMany@Annotations.dir}:${src3.dir}:${5.0. Herencia@Annotations1.dir}:${5.1. Herencia@Annotations(1Table).dir}:${src4.dir}:${5.3. Herencia@Annotations(Joined subclass).dir}:${src5.dir}:${5.5. Herencia@Annotations(PerConcreteClass).dir}:${5.6. Herencia_XMLMapping(PerConcreteClass).dir}:${6. SelfJoin(OneToMany)@Annotations.dir}:${6.1. SelfJoin(OneToMany)_XMLMapping.dir}:${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}:${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}:${src6.dir}:${7. PruebaJueves.dir}:${src7.dir}:${src8.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.processorpath}" name="processorpath"/>
@@ -316,7 +363,7 @@ is divided into following sections:
     </target>
     <target depends="-init-macrodef-javac-with-processors,-init-macrodef-javac-without-processors" name="-init-macrodef-javac">
         <macrodef name="depend" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.dir}" name="srcdir"/>
+            <attribute default="${src.dir}:${1. UniqueClass@Annotations.dir}:${2. OneToOne@Annotations1.dir}:${2.1. OneToOne@Annotations2.dir}:${src2.dir}:${3. ManyToOne@Annotations1.dir}:${3.1. OneToMany@Annotations2Bi.dir}:${3.2. OneToMany@Annotations2Uni.dir}:${3.3. OneToMany_XMLMapping2Bi.dir}:${4. ManyToMany@Annotations.dir}:${src3.dir}:${5.0. Herencia@Annotations1.dir}:${5.1. Herencia@Annotations(1Table).dir}:${src4.dir}:${5.3. Herencia@Annotations(Joined subclass).dir}:${src5.dir}:${5.5. Herencia@Annotations(PerConcreteClass).dir}:${5.6. Herencia_XMLMapping(PerConcreteClass).dir}:${6. SelfJoin(OneToMany)@Annotations.dir}:${6.1. SelfJoin(OneToMany)_XMLMapping.dir}:${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}:${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}:${src6.dir}:${7. PruebaJueves.dir}:${src7.dir}:${src8.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <sequential>
@@ -403,9 +450,6 @@ is divided into following sections:
                 <property name="junit.forkmode" value="perTest"/>
                 <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
                     <batchtest todir="${build.test.results.dir}">
-                        <fileset dir="${test.src.dir}" excludes="@{excludes},${excludes}" includes="@{includes}">
-                            <filename name="@{testincludes}"/>
-                        </fileset>
                         <fileset dir="${build.test.classes.dir}" excludes="@{excludes},${excludes},${test.binaryexcludes}" includes="${test.binaryincludes}">
                             <filename name="${test.binarytestincludes}"/>
                         </fileset>
@@ -434,13 +478,9 @@ is divided into following sections:
                 <condition else="" property="testng.methods.arg" value="@{testincludes}.@{testmethods}">
                     <isset property="test.method"/>
                 </condition>
-                <union id="test.set">
-                    <fileset dir="${test.src.dir}" excludes="@{excludes},**/*.xml,${excludes}" includes="@{includes}">
-                        <filename name="@{testincludes}"/>
-                    </fileset>
-                </union>
+                <union id="test.set"/>
                 <taskdef classname="org.testng.TestNGAntTask" classpath="${run.test.classpath}" name="testng"/>
-                <testng classfilesetref="test.set" failureProperty="tests.failed" listeners="org.testng.reporters.VerboseReporter" methods="${testng.methods.arg}" mode="${testng.mode}" outputdir="${build.test.results.dir}" suitename="Ejemplos" testname="TestNG tests" workingDir="${work.dir}">
+                <testng classfilesetref="test.set" failureProperty="tests.failed" listeners="org.testng.reporters.VerboseReporter" methods="${testng.methods.arg}" mode="${testng.mode}" outputdir="${build.test.results.dir}" suitename="HibernateExamples" testname="TestNG tests" workingDir="${work.dir}">
                     <xmlfileset dir="${build.test.classes.dir}" includes="@{testincludes}"/>
                     <propertyset>
                         <propertyref prefix="test-sys-prop."/>
@@ -547,9 +587,6 @@ is divided into following sections:
                 <property name="junit.forkmode" value="perTest"/>
                 <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
                     <batchtest todir="${build.test.results.dir}">
-                        <fileset dir="${test.src.dir}" excludes="@{excludes},${excludes}" includes="@{includes}">
-                            <filename name="@{testincludes}"/>
-                        </fileset>
                         <fileset dir="${build.test.classes.dir}" excludes="@{excludes},${excludes},${test.binaryexcludes}" includes="${test.binaryincludes}">
                             <filename name="${test.binarytestincludes}"/>
                         </fileset>
@@ -591,7 +628,7 @@ is divided into following sections:
                 <condition else="-testclass @{testClass}" property="test.class.or.method" value="-methods @{testClass}.@{testMethod}">
                     <isset property="test.method"/>
                 </condition>
-                <condition else="-suitename Ejemplos -testname @{testClass} ${test.class.or.method}" property="testng.cmd.args" value="@{testClass}">
+                <condition else="-suitename HibernateExamples -testname @{testClass} ${test.class.or.method}" property="testng.cmd.args" value="@{testClass}">
                     <matches pattern=".*\.xml" string="@{testClass}"/>
                 </condition>
                 <delete dir="${build.test.results.dir}" quiet="true"/>
@@ -883,7 +920,7 @@ is divided into following sections:
         <delete file="${built-jar.properties}" quiet="true"/>
     </target>
     <target if="already.built.jar.${basedir}" name="-warn-already-built-jar">
-        <echo level="warn" message="Cycle detected: Ejemplos was already built"/>
+        <echo level="warn" message="Cycle detected: HibernateExamples was already built"/>
     </target>
     <target depends="init,-deps-jar-init" name="deps-jar" unless="no.deps">
         <mkdir dir="${build.dir}"/>
@@ -914,12 +951,37 @@ is divided into following sections:
                 <include name="*"/>
             </dirset>
         </pathconvert>
-        <j2seproject3:depend srcdir="${src.dir}:${build.generated.subdirs}"/>
+        <j2seproject3:depend srcdir="${src.dir}:${1. UniqueClass@Annotations.dir}:${2. OneToOne@Annotations1.dir}:${2.1. OneToOne@Annotations2.dir}:${src2.dir}:${3. ManyToOne@Annotations1.dir}:${3.1. OneToMany@Annotations2Bi.dir}:${3.2. OneToMany@Annotations2Uni.dir}:${3.3. OneToMany_XMLMapping2Bi.dir}:${4. ManyToMany@Annotations.dir}:${src3.dir}:${5.0. Herencia@Annotations1.dir}:${5.1. Herencia@Annotations(1Table).dir}:${src4.dir}:${5.3. Herencia@Annotations(Joined subclass).dir}:${src5.dir}:${5.5. Herencia@Annotations(PerConcreteClass).dir}:${5.6. Herencia_XMLMapping(PerConcreteClass).dir}:${6. SelfJoin(OneToMany)@Annotations.dir}:${6.1. SelfJoin(OneToMany)_XMLMapping.dir}:${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}:${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}:${src6.dir}:${7. PruebaJueves.dir}:${src7.dir}:${src8.dir}:${build.generated.subdirs}"/>
     </target>
     <target depends="init,deps-jar,-pre-pre-compile,-pre-compile, -copy-persistence-xml,-compile-depend" if="have.sources" name="-do-compile">
         <j2seproject3:javac gensrcdir="${build.generated.sources.dir}"/>
         <copy todir="${build.classes.dir}">
             <fileset dir="${src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${1. UniqueClass@Annotations.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${2. OneToOne@Annotations1.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${2.1. OneToOne@Annotations2.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src2.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${3. ManyToOne@Annotations1.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${3.1. OneToMany@Annotations2Bi.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${3.2. OneToMany@Annotations2Uni.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${3.3. OneToMany_XMLMapping2Bi.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${4. ManyToMany@Annotations.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src3.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${5.0. Herencia@Annotations1.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${5.1. Herencia@Annotations(1Table).dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src4.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${5.3. Herencia@Annotations(Joined subclass).dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src5.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${5.5. Herencia@Annotations(PerConcreteClass).dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${5.6. Herencia_XMLMapping(PerConcreteClass).dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${6. SelfJoin(OneToMany)@Annotations.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${6.1. SelfJoin(OneToMany)_XMLMapping.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src6.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${7. PruebaJueves.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src7.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src8.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
         </copy>
     </target>
     <target if="has.persistence.xml" name="-copy-persistence-xml">
@@ -940,7 +1002,7 @@ is divided into following sections:
     <target depends="init,deps-jar,-pre-pre-compile" name="-do-compile-single">
         <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
         <j2seproject3:force-recompile/>
-        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}" sourcepath="${src.dir}"/>
+        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}" sourcepath="${src.dir}:${1. UniqueClass@Annotations.dir}:${2. OneToOne@Annotations1.dir}:${2.1. OneToOne@Annotations2.dir}:${src2.dir}:${3. ManyToOne@Annotations1.dir}:${3.1. OneToMany@Annotations2Bi.dir}:${3.2. OneToMany@Annotations2Uni.dir}:${3.3. OneToMany_XMLMapping2Bi.dir}:${4. ManyToMany@Annotations.dir}:${src3.dir}:${5.0. Herencia@Annotations1.dir}:${5.1. Herencia@Annotations(1Table).dir}:${src4.dir}:${5.3. Herencia@Annotations(Joined subclass).dir}:${src5.dir}:${5.5. Herencia@Annotations(PerConcreteClass).dir}:${5.6. Herencia_XMLMapping(PerConcreteClass).dir}:${6. SelfJoin(OneToMany)@Annotations.dir}:${6.1. SelfJoin(OneToMany)_XMLMapping.dir}:${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}:${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}:${src6.dir}:${7. PruebaJueves.dir}:${src7.dir}:${src8.dir}"/>
     </target>
     <target name="-post-compile-single">
         <!-- Empty placeholder for easier customization. -->
@@ -1206,6 +1268,81 @@ is divided into following sections:
             <fileset dir="${src.dir}" excludes="*.java,${excludes}" includes="${includes}">
                 <filename name="**/*.java"/>
             </fileset>
+            <fileset dir="${1. UniqueClass@Annotations.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${2. OneToOne@Annotations1.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${2.1. OneToOne@Annotations2.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src2.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${3. ManyToOne@Annotations1.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${3.1. OneToMany@Annotations2Bi.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${3.2. OneToMany@Annotations2Uni.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${3.3. OneToMany_XMLMapping2Bi.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${4. ManyToMany@Annotations.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src3.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${5.0. Herencia@Annotations1.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${5.1. Herencia@Annotations(1Table).dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src4.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${5.3. Herencia@Annotations(Joined subclass).dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src5.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${5.5. Herencia@Annotations(PerConcreteClass).dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${5.6. Herencia_XMLMapping(PerConcreteClass).dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${6. SelfJoin(OneToMany)@Annotations.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${6.1. SelfJoin(OneToMany)_XMLMapping.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src6.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${7. PruebaJueves.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src7.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src8.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
             <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
                 <include name="**/*.java"/>
                 <exclude name="*.java"/>
@@ -1214,6 +1351,81 @@ is divided into following sections:
         </javadoc>
         <copy todir="${dist.javadoc.dir}">
             <fileset dir="${src.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${1. UniqueClass@Annotations.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${2. OneToOne@Annotations1.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${2.1. OneToOne@Annotations2.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src2.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${3. ManyToOne@Annotations1.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${3.1. OneToMany@Annotations2Bi.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${3.2. OneToMany@Annotations2Uni.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${3.3. OneToMany_XMLMapping2Bi.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${4. ManyToMany@Annotations.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src3.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${5.0. Herencia@Annotations1.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${5.1. Herencia@Annotations(1Table).dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src4.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${5.3. Herencia@Annotations(Joined subclass).dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src5.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${5.5. Herencia@Annotations(PerConcreteClass).dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${5.6. Herencia_XMLMapping(PerConcreteClass).dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${6. SelfJoin(OneToMany)@Annotations.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${6.1. SelfJoin(OneToMany)_XMLMapping.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${6.2. SelfJoin(ManyToMany)@AnnotationsConJoinTable.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${6.3. SelfJoin(ManyToMany)@AnnotationsSinJoinTable.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src6.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${7. PruebaJueves.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src7.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src8.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
             </fileset>
             <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
@@ -1238,13 +1450,11 @@ is divided into following sections:
         <!-- You can override this target in the ../build.xml file. -->
     </target>
     <target if="do.depend.true" name="-compile-test-depend">
-        <j2seproject3:depend classpath="${javac.test.classpath}" destdir="${build.test.classes.dir}" srcdir="${test.src.dir}"/>
+        <j2seproject3:depend classpath="${javac.test.classpath}" destdir="${build.test.classes.dir}" srcdir=""/>
     </target>
     <target depends="init,deps-jar,compile,-pre-pre-compile-test,-pre-compile-test,-compile-test-depend" if="have.tests" name="-do-compile-test">
-        <j2seproject3:javac apgeneratedsrcdir="${build.test.classes.dir}" classpath="${javac.test.classpath}" debug="true" destdir="${build.test.classes.dir}" processorpath="${javac.test.processorpath}" srcdir="${test.src.dir}"/>
-        <copy todir="${build.test.classes.dir}">
-            <fileset dir="${test.src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
-        </copy>
+        <j2seproject3:javac apgeneratedsrcdir="${build.test.classes.dir}" classpath="${javac.test.classpath}" debug="true" destdir="${build.test.classes.dir}" processorpath="${javac.test.processorpath}" srcdir=""/>
+        <copy todir="${build.test.classes.dir}"/>
     </target>
     <target name="-post-compile-test">
         <!-- Empty placeholder for easier customization. -->
@@ -1258,10 +1468,8 @@ is divided into following sections:
     <target depends="init,deps-jar,compile,-pre-pre-compile-test,-pre-compile-test-single" if="have.tests" name="-do-compile-test-single">
         <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
         <j2seproject3:force-recompile destdir="${build.test.classes.dir}"/>
-        <j2seproject3:javac apgeneratedsrcdir="${build.test.classes.dir}" classpath="${javac.test.classpath}" debug="true" destdir="${build.test.classes.dir}" excludes="" includes="${javac.includes}" processorpath="${javac.test.processorpath}" sourcepath="${test.src.dir}" srcdir="${test.src.dir}"/>
-        <copy todir="${build.test.classes.dir}">
-            <fileset dir="${test.src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
-        </copy>
+        <j2seproject3:javac apgeneratedsrcdir="${build.test.classes.dir}" classpath="${javac.test.classpath}" debug="true" destdir="${build.test.classes.dir}" excludes="" includes="${javac.includes}" processorpath="${javac.test.processorpath}" sourcepath="" srcdir=""/>
+        <copy todir="${build.test.classes.dir}"/>
     </target>
     <target name="-post-compile-test-single">
         <!-- Empty placeholder for easier customization. -->
@@ -1365,7 +1573,7 @@ is divided into following sections:
         <delete file="${built-clean.properties}" quiet="true"/>
     </target>
     <target if="already.built.clean.${basedir}" name="-warn-already-built-clean">
-        <echo level="warn" message="Cycle detected: Ejemplos was already built"/>
+        <echo level="warn" message="Cycle detected: HibernateExamples was already built"/>
     </target>
     <target depends="init,-deps-clean-init" name="deps-clean" unless="no.deps">
         <mkdir dir="${build.dir}"/>
