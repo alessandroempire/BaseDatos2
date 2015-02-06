@@ -1,1 +1,4 @@
 repositorio para el codigo del proyecto de base de datos2
+
+Acceder a mysql:
+mysql -h localhost -u root -p

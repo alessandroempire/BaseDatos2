@@ -12473,9 +12473,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": true,
-									"left": 126,
+									"left": 136,
 									"top": 1264,
-									"width": 74,
+									"width": 55,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 0.26277216281113946,
@@ -12485,7 +12485,7 @@
 									},
 									"edgePosition": 1,
 									"underline": false,
-									"text": "+notificacion",
+									"text": "+Interesa",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -14816,13 +14816,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": true,
-									"left": 1176,
-									"top": 567,
+									"left": 1080,
+									"top": 532,
 									"width": 75,
 									"height": 13,
 									"autoResize": false,
-									"alpha": 2.4114540357594345,
-									"distance": 67.47592163134935,
+									"alpha": 0.21733204530658234,
+									"distance": 48.05205510693585,
 									"hostEdge": {
 										"$ref": "AAAAAAFLI3cF4EEsz5Y="
 									},
@@ -16143,7 +16143,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFLGEmKwbttQ9g="
 							},
-							"name": "notificacion",
+							"name": "Interesa",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFLIsvS18rvmZM=",
