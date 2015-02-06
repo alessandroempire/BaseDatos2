@@ -15,7 +15,7 @@ public class Articulo {
     private String nombre_enviado;
     private String mensaje;
     private double precio_envio;
-    private String descripcion_envio; 
+    private String detalle_envio; 
     
     //Constructor
     public Articulo(){}
@@ -27,7 +27,7 @@ public class Articulo {
         this.nombre_enviado = nombre_enviado;
         this.mensaje = mensaje;
         this.precio_envio = precio_envio;
-        this.descripcion_envio = descripcion_envio;
+        this.detalle_envio = descripcion_envio;
     }
 
     public Direccion getDireccion_envio() {
@@ -63,10 +63,10 @@ public class Articulo {
     }
 
     public String getDescripcion_envio() {
-        return descripcion_envio;
+        return detalle_envio;
     }
 
     public void setDescripcion_envio(String descripcion_envio) {
-        this.descripcion_envio = descripcion_envio;
+        this.detalle_envio = descripcion_envio;
     }
 }
