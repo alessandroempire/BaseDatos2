@@ -8,6 +8,8 @@
     <class dynamic-insert="false" dynamic-update="false" mutable="true" 
          optimistic-lock="version" polymorphism="implicit" select-before-update="false"
          name="TarjetaCredito" table="TARJETA_CREDITO">
+        
+        
       
       
   </class>
