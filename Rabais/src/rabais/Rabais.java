@@ -6,7 +6,7 @@
 
 package rabais;
 
-import java.sql.*; 
+import org.hibernate.*;
 
 /**
  * @Autores:
@@ -17,21 +17,10 @@ import java.sql.*;
  */
 public class Rabais {
     
-    // JDBC driver name and database URL
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/";
-
-    //  Database credentials
-    static final String USER = "username";
-    static final String PASS = "password";
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        
-        
         System.out.println("Rabais!");
     }
     
