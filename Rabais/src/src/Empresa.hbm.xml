@@ -17,7 +17,6 @@
   <set name="telefonos" table="EMPRESA_TLF_TABLE">
             <key column="EMPRESA_NOMBRE"/>
             <element type="string" column="EMPRESA_TLF"/>
-                     este tipo es string de verdad?
   </set>
   
   <set name="correos" table="EMPRESA_CORREOS_TABLE">
@@ -26,7 +25,13 @@
   </set>
   
   <property column="EMPRESA_NUM_CLIENTES" name="numero_clientes"/>
-  <property column="EMPRESA_ADRESS" name="address"/> el tipo? 
   
+  <composite-element name="address" class="Direccion">
+      <property name="calle" column="EMPRESA_DIR_CALLE"/>
+       <property name="urbanizacion" column="EMPRESA_DIR_URB"/>
+       <property name="nombre" column="EMPRESA_DIR_NOMBRE"/>
+       <property name="numero"column="EMPRESA_DIR_NUM"/>
+       <property name="codigo_postal" type="string" column="EMPRESA_DIR_COD_POSTAL"/>
+  </composite-element>
   
 </hibernate-mapping>

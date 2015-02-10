@@ -6,8 +6,6 @@
 
 package rabais;
 
-import java.util.Arrays;
-
 /**
  * @Autores:
  * Alessandro La Corte
@@ -16,7 +14,7 @@ import java.util.Arrays;
  * @Descripcion:
  */
 public class TarjetaCredito {
-    private int[] numero;
+    private String numero;
     private String tarjetahabiente;
     private String tipo; 
     
@@ -24,18 +22,18 @@ public class TarjetaCredito {
     public TarjetaCredito(){}
     
     //Constructor
-    public TarjetaCredito(int[] numero, String tarjetahabiente, String tipo){
-        this.numero          = Arrays.copyOf(numero, numero.length);
+    public TarjetaCredito(String numero, String tarjetahabiente, String tipo){
+        this.numero          = numero;
         this.tarjetahabiente = tarjetahabiente;
         this.tipo            = tipo;
     }
     
-    public int[] get_numero(){
+    public String get_numero(){
         return numero;
     }
     
-    public void set_numero(int[] num){
-        this.numero = Arrays.copyOf(num, num.length);
+    public void set_numero(String num){
+        this.numero = num;
     }
     
     public String get_tarjetahabiente(){

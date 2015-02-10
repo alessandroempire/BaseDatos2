@@ -18,10 +18,12 @@
     <property column="USER_NAME" name="name"/>
     <property column="USER_LAST_NAME" name="last_name"/>
     <property column="USER_BIRTH_DATE" name="birth_date" type="date"/>
+    
     <set name="email" table="USER_EMAIL_TABLE">
             <key column="USER_LOGIN"/>
             <element type="string" column="USER_EMAIL"/>
     </set>
+    
     <property column="USER_PROMOTIONAL_MONEY" name="promotional_money"/>
     
     
