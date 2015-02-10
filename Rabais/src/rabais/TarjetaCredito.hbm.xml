@@ -5,17 +5,22 @@
 
 <hibernate-mapping>
 
-    <class dynamic-insert="false" dynamic-update="false" mutable="true" 
-         optimistic-lock="version" polymorphism="implicit" select-before-update="false"
-         name="TarjetaCredito" table="TARJETA_CREDITO">
+    <class dynamic-insert="false" 
+           dynamic-update="false" 
+           mutable="true" 
+           optimistic-lock="version" 
+           polymorphism="implicit" 
+           select-before-update="false"
+           name="TarjetaCredito" 
+           table="TARJETA_CREDITO">
         
-        
+    DE NUEVO QUE TIPO ES? deberia ser number
+    <id column="CREDIT_NUMERO" name="numero" type=""/>
+    
+    <property column="CREDIT_TARJETAHABIENTE" name="tarjetahabiente"/>
+    <property column="CREDIT_TIPO" name="tipo"/>
       
       
   </class>
 
 </hibernate-mapping>
-
-private int[] numero;
-    private String tarjetahabiente;
-    private String tipo; 

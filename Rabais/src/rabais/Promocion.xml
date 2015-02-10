@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class dynamic-insert="false" 
+         dynamic-update="false" 
+         mutable="true" 
+         name="rabais.Promocion" 
+         optimistic-lock="version" 
+         polymorphism="implicit" 
+         select-before-update="false"/>
+  
+  <id column="PROMOCION_NOMBRE" name="nombre_promocion"/>
+  
+  <property column="PROMOCION_DESC_BREVE" name="descripcion_breve"/> 
+  <property column="PROMOCION_DESC_COMPLETA" name="descripcion_completa"/> 
+  <property column="PROMOCION_DESC_ADICIONAL" name="descripcion_adicional"/> 
+  <property column="PROMOCION_MONTO_ORIGINAL" name="monto_original"/> 
+  
+  <set name="palabras_claves" table="PROMOCION_PALABRA_CLAVE_TABLE">
+            <key column="PROMOCION_NOMBRE"/>
+            <element type="string" column="PROMOCION_PALABRA_CLAVE"/>
+  </set>
+    
+  <set name="pagina_web" table="PROMOCION_PAG_WEB_TABLE">
+            <key column="PROMOCION_NOMBRE"/>
+            <element type="string" column="PROMOCION_PAGINA_WEB"/>
+  </set> 
+  
+  <property column="PROMOCION_CANT_DISPONIBLE" name="cantidad_disponible"/> 
+  <property column="PROMOCION_PUNTAJE_TOTAL" name="puntaje_total"/> 
+  
+  
+</hibernate-mapping>

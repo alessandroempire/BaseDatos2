@@ -24,7 +24,7 @@ public class Usuario {
     private String           last_name;
     private Date             birth_date;
     private Set<String>      email;                 //1 o mas correos. 
-    private int              promocional_money;
+    private int              promotional_money;
     private Coordenadas      coordinates; 
     
     //Constructor
@@ -39,7 +39,7 @@ public class Usuario {
         birth_date        = fecha;
         email             = new HashSet<>();
         email.add(correo);
-        promocional_money = dinero;
+        promotional_money = dinero;
         coordinates       = coor; 
     }
     
@@ -95,11 +95,11 @@ public class Usuario {
     }
     
     public int get_promocional_money(){
-        return promocional_money;
+        return promotional_money;
     }
     
     public void set_promocional_money(int promocional_money){
-        this.promocional_money = promocional_money;
+        this.promotional_money = promocional_money;
     }
     
     public Coordenadas get_coordinates(){

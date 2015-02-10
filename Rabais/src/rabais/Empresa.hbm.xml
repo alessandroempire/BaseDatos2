@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class dynamic-insert="false" 
+         dynamic-update="false" 
+         mutable="true" 
+         name="rabais.Empresa" 
+         table="EMPRESA"
+         optimistic-lock="version" 
+         polymorphism="implicit" 
+         select-before-update="false"/>
+  
+  <id column="EMPRESA_NOMBRE" name="nombre"/>
+  
+  <property column="EMPRESA_RAZON_S" name="razon_social" />
+  
+  <set name="telefonos" table="EMPRESA_TLF_TABLE">
+            <key column="EMPRESA_NOMBRE"/>
+            <element type="string" column="EMPRESA_TLF"/>
+                     este tipo es string de verdad?
+  </set>
+  
+  <set name="correos" table="EMPRESA_CORREOS_TABLE">
+            <key column="EMPRESA_NOMBRE"/>
+            <element type="string" column="EMPRESA_CORREO"/>
+  </set>
+  
+  <property column="EMPRESA_NUM_CLIENTES" name="numero_clientes"/>
+  <property column="EMPRESA_ADRESS" name="address"/> el tipo? 
+  
+  
+</hibernate-mapping>
