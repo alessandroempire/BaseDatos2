@@ -1,7 +1,14 @@
 repositorio para el codigo del proyecto de base de datos2
 
+Ejecutar
+sudo apt-get install mysql-client-5.5
+sudo apt-get install mysql-server-5.5
+
 Acceder a mysql:
 mysql -h localhost -u root -p
+
+crear base de datos
+create database rabais;
 
 crear usuario:
 create user 'alessandro'@'locahost' IDENTIFIED by 'alcpass'
@@ -9,4 +16,7 @@ create user 'alessandro'@'locahost' IDENTIFIED by 'alcpass'
 luego ejecutar:
 grant all privileges on *.* to 'alessandro'@'localhost' identified by 'alcpass' with grant option;
 
-luego ver que puedes acceder a mysql con ese usuario y ya deberia funcionar.
+Salir de la sesion de mysql y ejecutar
+
+mysql -h locahost -u alessandro -p
+el password es alcpass
