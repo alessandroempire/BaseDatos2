@@ -2,3 +2,11 @@ repositorio para el codigo del proyecto de base de datos2
 
 Acceder a mysql:
 mysql -h localhost -u root -p
+
+crear usuario:
+create user 'alessandro'@'locahost' IDENTIFIED by 'alcpass'
+
+luego ejecutar:
+grant all privileges on *.* to 'alessandro'@'localhost' identified by 'alcpass' with grant option;
+
+luego ver que puedes acceder a mysql con ese usuario y ya deberia funcionar.
