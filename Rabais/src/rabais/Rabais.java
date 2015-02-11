@@ -25,18 +25,9 @@ public class Rabais {
     public static void main(String[] args) {
         System.out.println("Rabais!");
         
-        TarjetaCredito t1 = new TarjetaCredito("123456", "ale", "MASTERCARD");
-        
-        /*
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
+        TarjetaCredito t1 = new TarjetaCredito("123455", "ale", "MASTERCARD");
 
-        session.save(t1);
-
-        session.getTransaction().commit();
-        
-        session.close();
-        */
+        @SuppressWarnings("deprecation")
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
