@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+ 
+       <class name="EmployeeDetail" table="EMPLOYEEDETAIL">
+ 
+        <id name="employeeId" type="java.lang.Long">
+        <column name = "EMPLOYEE_ID"/>
+            <generator class="foreign">
+               <param name="property">employee</param> <!-- Indica que se refiere al id del que es foránea que es employee -->
+            </generator>  
+        </id>
+        
+        <!-- constrained (optional) specifies that a foreign key constraint on the primary key of the mapped table references the table of the associated class.
+         This option affects the order in which save() and delete() are cascaded, and determines whether the association may be proxied (it is also used by the schema 
+         export tool). -->
+         <!-- constrained = true is a guarantee to hibernate that the object exists so it doesn't error when it then goes to load it.  -->
+        <one-to-one name="employee" class="org.hibernate.tutorial.domain.Employee" constrained="true" ></one-to-one>
+         
+        <property name="street" column="STREET"/>
+        <property name="city" column="CITY"/>
+        <property name="state" column="STATE"/>
+        <property name="country" column="COUNTRY"/>
+   
+       </class>
+    
+</hibernate-mapping>

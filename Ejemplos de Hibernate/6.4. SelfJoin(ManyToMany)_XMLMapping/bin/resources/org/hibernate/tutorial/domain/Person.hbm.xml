@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">   
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+
+<class name="Person" table="PERSON">
+  
+    <id name="personId" column="PERSON_ID">
+        <generator class="native" />
+    </id>
+    
+    <property name="name" type="string" length="50" column="NAME" />
+    
+	<set name="persons" table="friends" cascade="none" lazy="false">
+	      <key column="person_id"/>
+	      <many-to-many column="friend_id" class="org.hibernate.tutorial.domain.Person" />
+	</set> 
+	
+	<set name="friends" table="friends" cascade="none" lazy="false">
+	      <key column="friend_id"/>
+	      <many-to-many column="person_id" class="org.hibernate.tutorial.domain.Person" />
+	</set> 
+     
+</class>
+
+</hibernate-mapping>

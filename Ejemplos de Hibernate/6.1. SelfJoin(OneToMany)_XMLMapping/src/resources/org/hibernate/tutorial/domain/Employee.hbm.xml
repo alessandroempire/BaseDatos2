@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">   
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+
+<class name="Employee" table="EMPLOYEE">
+  
+    <id name="employeeId" column="EMPLOYEE_ID">
+        <generator class="native" />
+    </id>
+    
+    <property name="firstname" column="FIRST_NAME"/>
+    <property name="lastname" column="LAST_NAME"/>
+    
+    <many-to-one name="manager" class="org.hibernate.tutorial.domain.Employee" column="manager_id"
+            not-null="false"/>
+            
+    <set name="subordinates" table="EMPLOYEE" lazy="false" inverse="false">
+              <key column="manager_id"/>
+              <one-to-many class="org.hibernate.tutorial.domain.Employee" />
+     </set>
+     
+</class>
+
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain"> <!-- Indico el paquete actual -->
+
+  <class name="Event" table="EVENTS">
+        <id name="id" column="EVENT_ID">
+            <generator class="native"/> <!-- Especifica la estrategia de generación del id, en este caso se elige nativo que da un nivel de portabilidad dependiendo del dialecto de la base de datos -->
+        </id>
+        <property name="date" type="timestamp" column="EVENT_DATE"/>
+        <property name="title"/> <!-- property indica cuáles getters y setters va a utilizar -->
+        <!-- Si no especifico el nombre de la columna, Hibernate por defecto toma el nombre que ya tiene -->
+    </class>
+
+</hibernate-mapping>

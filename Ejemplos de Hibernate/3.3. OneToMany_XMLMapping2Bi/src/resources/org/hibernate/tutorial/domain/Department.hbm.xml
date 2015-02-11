@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+ 
+    <class name="Department" table="DEPARTMENT">
+        <id name="departmentId" type="java.lang.Long" column="DEPARTMENT_ID">
+            <generator class="native"></generator>
+        </id>
+         
+        <property name="departmentName" column="DEPT_NAME"/>
+ 
+ 		<!--inverse="true" lazy="true" fetch="select" QUE ES  -->
+ 		<!--  Con fetch="select" recupera todos los empleados del dpto -->
+ 		<!--  Con lazy="true" se le dice a Hibernate cuando va a recuperar los empleados del dpto
+ 		que será justo cuando los seleccione -->
+ 		<!-- Con inverse="true" se dice quien es el propietario de la relación, en este caso
+ 		     la clase propietaria de la relación es empleado. -->
+        <set name="employees" table="employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="department_id" not-null="true"/>
+            </key>
+            <one-to-many class="org.hibernate.tutorial.domain.Employee"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

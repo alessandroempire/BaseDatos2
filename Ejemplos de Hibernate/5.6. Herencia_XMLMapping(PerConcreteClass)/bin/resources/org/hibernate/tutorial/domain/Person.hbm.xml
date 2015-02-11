@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Note that we have defined only one hibernate mapping (hbm) file Person.hbm.xml. 
+Both Person and Employee model class are defined within one hbm file.-->
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+ 
+  <class name="Person" table="PERSON">
+        <id name="personId" column="PERSON_ID">
+            <generator class="native"/>
+        </id>
+        <property name="firstname"/>
+        <property name="lastname" column="lastname"/>
+  </class>
+ 
+    <class name="Employee" table="EMPLOYEE">
+        <id name="personId" column="PERSON_ID">
+            <generator class="native"/>
+        </id>   
+        <property name="firstname"/>
+        <property name="lastname" column="lastname"/>
+        <property name="departmentName" column="department_name"/>
+        <property name="joiningDate" type="date" column="joining_date"/>
+    </class>
+ 
+    <class name="Owner" table="OWNER">
+        <id name="personId" column="PERSON_ID">
+            <generator class="native"/>
+        </id>
+        <property name="firstname"/>
+        <property name="lastname" column="lastname"/>
+        <property name="stocks" column="stocks"/>
+        <property name="partnershipStake" column="partnership_stake"/>
+    </class>
+  
+</hibernate-mapping>

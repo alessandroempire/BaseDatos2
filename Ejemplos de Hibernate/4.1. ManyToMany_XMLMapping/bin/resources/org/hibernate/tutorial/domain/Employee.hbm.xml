@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+ 
+    <class name="Employee" table="EMPLOYEE">
+        <id name="employeeId" column="EMPLOYEE_ID">
+            <generator class="native"/>
+        </id>
+ 
+        <property name="firstname" column="FIRST_NAME"/>
+        <property name="lastname" column="LAST_NAME"/>
+ 
+ 		<!-- Cascade is a convenient feature to save the lines of 
+ 		code needed to manage the state of the other side manually.
+ 		The “Cascade” keyword is often appear on the collection mapping to manage 
+ 		the state of the collection automatically. In this tutorials, -->
+ 		<!-- Con inverse=false indico que la clase propietaria no es meeting -->
+        <set name="meetings" table="EMPLOYEE_MEETING" inverse="false" lazy="true" fetch="select" cascade="all">
+           <key>
+              <column name="EMPLOYEE_ID" not-null="true"/>
+           </key>
+           <many-to-many column="MEETING_ID" class="org.hibernate.tutorial.domain.Meeting"></many-to-many>
+        </set>
+ 	 </class>
+ 	
+</hibernate-mapping>
