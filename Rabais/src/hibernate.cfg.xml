@@ -20,9 +20,11 @@
     <!-- Drop and re-create the database schema on startup -->
     <property name="hbm2ddl.auto">create</property>
     <mapping resource="TarjetaCredito.hbm.xml"/>
+    <mapping resource="Categoria.hbm.xml"/>
+    <mapping resource="Empresa.hbm.xml"/>
     <!--mapping resource="rabais/usuario.hbm.xml"/>
 
-        <mapping resource="rabais/Empresa.hbm.xml"/>
+        
 
         <mapping resource="rabais/Promocion.xml"/>
 
