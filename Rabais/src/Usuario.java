@@ -43,70 +43,68 @@ public class Usuario {
         coordinates       = coor; 
     }
     
-    public String get_login(){
+    //Getters y Setters
+    public String getLogin() {
         return login;
     }
-    
-    public void set_login(String login){
+
+    public void setLogin(String login) {
         this.login = login;
     }
-    
-    public String get_password(){
+
+    public String getPassword() {
         return password;
     }
-    
-    public void set_passwrod(String password){
-        this.password = password; 
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    
-    public String get_name(){
+
+    public String getName() {
         return name;
     }
-    
-    public void set_name(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    
-    public String get_last_name(){
+
+    public String getLast_name() {
         return last_name;
     }
-    
-    public void set_last_name(String last_name){
+
+    public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
-    
-    public Date get_birth_date(){
+
+    public Date getBirth_date() {
         return birth_date;
     }
-    
-    public void set_birth_date(Date birth_date){
+
+    public void setBirth_date(Date birth_date) {
         this.birth_date = birth_date;
     }
-    
-    public Set<String> get_email(){
-        return email; 
+
+    public Set<String> getEmail() {
+        return email;
     }
-    
-    public void set_email(String email){
-        if (this.email.isEmpty())
-            this.email = new HashSet<>();
-        
-        this.email.add(email);
+
+    public void setEmail(Set<String> email) {
+        this.email = email;
     }
-    
-    public int get_promocional_money(){
+
+    public int getPromotional_money() {
         return promotional_money;
     }
-    
-    public void set_promocional_money(int promocional_money){
-        this.promotional_money = promocional_money;
+
+    public void setPromotional_money(int promotional_money) {
+        this.promotional_money = promotional_money;
     }
-    
-    public Coordenadas get_coordinates(){
+
+    public Coordenadas getCoordinates() {
         return coordinates;
     }
-    
-    public void set_coordinates(Coordenadas coordinates){
-        this.coordinates = coordinates; 
+
+    public void setCoordinates(Coordenadas coordinates) {
+        this.coordinates = coordinates;
     }
 }

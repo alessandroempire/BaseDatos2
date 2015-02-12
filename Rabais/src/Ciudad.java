@@ -27,36 +27,37 @@ public class Ciudad {
         this.pais        = pais;
         this.coordenadas = coordenadas;
     }
-
-    public String get_nombre(){
+    
+    //Getters y Setters
+    public String getNombre() {
         return nombre;
     }
-    
-    public void set_nombre(String nombre){
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public String get_estado(){
+
+    public String getEstado() {
         return estado;
     }
-    
-    public void set_estado(String estado){
+
+    public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    public String get_pais(){
+
+    public String getPais() {
         return pais;
     }
-    
-    public void set_pais(String pais){
+
+    public void setPais(String pais) {
         this.pais = pais;
     }
-    
-    public Coordenadas get_coordenadas(){
+
+    public Coordenadas getCoordenadas() {
         return coordenadas;
     }
-    
-    public void set_coordenadas(Coordenadas coordenadas){
+
+    public void setCoordenadas(Coordenadas coordenadas) {
         this.coordenadas = coordenadas;
     }
 }

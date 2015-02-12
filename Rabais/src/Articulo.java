@@ -30,6 +30,7 @@ public class Articulo {
         this.detalle_envio = descripcion_envio;
     }
 
+    //Getters y setters
     public Direccion getDireccion_envio() {
         return direccion_envio;
     }
@@ -62,11 +63,11 @@ public class Articulo {
         this.precio_envio = precio_envio;
     }
 
-    public String getDescripcion_envio() {
+    public String getDetalle_envio() {
         return detalle_envio;
     }
 
-    public void setDescripcion_envio(String descripcion_envio) {
-        this.detalle_envio = descripcion_envio;
+    public void setDetalle_envio(String detalle_envio) {
+        this.detalle_envio = detalle_envio;
     }
 }

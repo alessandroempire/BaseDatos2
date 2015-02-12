@@ -27,19 +27,20 @@ public class Coordenadas {
         longitude = lo;
     }
     
-    public DMS get_latitud(){
+    //Getters y setters
+    public DMS getLatitude() {
         return latitude;
     }
-    
-    public void set_latitud(DMS la){
-        this.latitude = la;
+
+    public void setLatitude(DMS latitude) {
+        this.latitude = latitude;
     }
-    
-    public DMS get_longitude(){
+
+    public DMS getLongitude() {
         return longitude;
     }
-    
-    public void set_longitude(DMS lo){
-        this.longitude = lo;
+
+    public void setLongitude(DMS longitude) {
+        this.longitude = longitude;
     }
 }

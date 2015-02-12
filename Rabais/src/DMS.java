@@ -31,27 +31,29 @@ public class DMS {
         seconds = s;
     }
     
-    public int get_degree(){
+    //Getters y setters
+    public int getDegree() {
         return degree;
     }
-    
-    public void set_degree(int d){
-        this.degree = d;
+
+    public void setDegree(int degree) {
+        this.degree = degree;
     }
-    
-    public int get_minutes(){
+
+    public int getMinutes() {
         return minutes;
     }
-    
-    public void set_minutes(int m){
-        this.minutes = m;
+
+    public void setMinutes(int minutes) {
+        this.minutes = minutes;
+    }
+
+    public int getSeconds() {
+        return seconds;
+    }
+
+    public void setSeconds(int seconds) {
+        this.seconds = seconds;
     }
     
-    public int get_seconds(){
-        return seconds; 
-    }
-    
-    public void set_seconds(int s){
-        this.seconds = s;
-    }
 }

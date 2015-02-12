@@ -38,46 +38,44 @@ public class Oferta {
         this.fecha_de_vigencia.add(fecha_de_vigencia);
     }
     
-    public Date get_Date(){
+    //Getters y Setters
+    public Date getFecha_publicacion() {
         return fecha_publicacion;
     }
-    
-    public void set_Date(Date date){
-        this.fecha_publicacion = date;
+
+    public void setFecha_publicacion(Date fecha_publicacion) {
+        this.fecha_publicacion = fecha_publicacion;
     }
-    
-    public int get_Cantidad(){
+
+    public int getCantidad() {
         return cantidad;
-    } 
-    
-    public void set_Catidad(int cantidad){
+    }
+
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    public double get_monto_ofertado(){
+
+    public double getMonto_ofertado() {
         return monto_ofertado;
     }
-    
-    public void set_monto_ofertado(double monto_ofertado){
+
+    public void setMonto_ofertado(double monto_ofertado) {
         this.monto_ofertado = monto_ofertado;
     }
-    
-    public int get_porcentaje_descuento(){
+
+    public int getPorcentaje_descuento() {
         return porcentaje_descuento;
     }
-    
-    public void set_porcentaje_descuento(int porcentaje_descuento){
+
+    public void setPorcentaje_descuento(int porcentaje_descuento) {
         this.porcentaje_descuento = porcentaje_descuento;
     }
-    
-    public Set<Date> get_fecha_de_vigencia(){
+
+    public Set<Date> getFecha_de_vigencia() {
         return fecha_de_vigencia;
     }
-    
-    public void set_fecha_de_vigencia(Date date){
-        if (this.fecha_de_vigencia.isEmpty())
-            this.fecha_de_vigencia = new HashSet<>();
-        
-        this.fecha_de_vigencia.add(date);
+
+    public void setFecha_de_vigencia(Set<Date> fecha_de_vigencia) {
+        this.fecha_de_vigencia = fecha_de_vigencia;
     }
 }

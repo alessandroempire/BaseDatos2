@@ -22,12 +22,7 @@
     <mapping resource="TarjetaCredito.hbm.xml"/>
     <mapping resource="Categoria.hbm.xml"/>
     <mapping resource="Empresa.hbm.xml"/>
-    <!--mapping resource="rabais/usuario.hbm.xml"/>
-
-        
-
-        <mapping resource="rabais/Promocion.xml"/>
-
-        <mapping resource="rabais/Categoria.hbm.xml"/-->
+    <mapping resource="Promocion.hbm.xml"/>
+    <mapping resource="Usuario.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

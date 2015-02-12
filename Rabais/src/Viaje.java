@@ -14,8 +14,6 @@ public class Viaje {
     private Ciudad ciudad_destino;
     private Promocion recomendaciones; 
 
-
-    
     //Constructor
     public Viaje(){}
     
@@ -24,7 +22,8 @@ public class Viaje {
         this.ciudad_destino = ciudad_destino;
         this.recomendaciones = recomendaciones;
     }
-
+    
+    //Getters y Setters
     public Ciudad getCiudad_destino() {
         return ciudad_destino;
     }
@@ -32,7 +31,7 @@ public class Viaje {
     public void setCiudad_destino(Ciudad ciudad_destino) {
         this.ciudad_destino = ciudad_destino;
     }
-    
+
     public Promocion getRecomendaciones() {
         return recomendaciones;
     }
