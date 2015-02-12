@@ -29,7 +29,8 @@ public class Usuario {
     private int              promotional_money;
     private Coordenadas      coordinates; 
     //Asociaciones
-    private Set<TarjetaCredito> tarjetas; 
+    private Set<TarjetaCredito> tarjetas = new HashSet<TarjetaCredito>(); 
+    private Set<Promocion> promociones_compradas = new HashSet<Promocion>(); 
     
     //Constructor
     public Usuario(){}
@@ -118,5 +119,13 @@ public class Usuario {
 
     public void setTarjetas(Set<TarjetaCredito> tarjetas) {
         this.tarjetas = tarjetas;
+    }
+
+    public Set<Promocion> getPromociones_compradas() {
+        return promociones_compradas;
+    }
+
+    public void setPromociones_compradas(Set<Promocion> promociones_compradas) {
+        this.promociones_compradas = promociones_compradas;
     }
 }

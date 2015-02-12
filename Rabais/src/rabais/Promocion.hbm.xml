@@ -40,6 +40,13 @@
         </key>
         <many-to-many column="categoria_id" class="Categoria"/>
     </set>
+    
+    <set name="compraron_usuarios" table="PROMOCION_LIST_USUARIOS">
+        <key> 
+            <column name="promocion_id" not-null="false"/>
+        </key>
+        <many-to-many column="usuario_id" class="Usuario"/>
+    </set>
   
   </class>
 </hibernate-mapping>

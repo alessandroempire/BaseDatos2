@@ -46,23 +46,30 @@ public class Rabais {
         Usuario u1 = new Usuario("ale", "alcpass", "alessandro", "la corte", 
                 date, "alec@gmail.com", 1000, coor);
         
-        //Asosiaciones usuario y tarjeta de credito
+        //Asosiaciones posee_tarjeta entre usuario y tarjeta de credito
         Set set1 = new HashSet();
         set1.add(t1);
         u1.setTarjetas(set1);
         
         t1.setUsuario(u1);
         
-        //Asosiacion promocion y categoria
+        //Asosiacion posee_categoria entre promocion y categoria
         Set set2 = new HashSet();
         set2.add(c1);
         p1.setCategorias(set2);
         
-        Set set3 = new HashSet();
-        set3.add(p1);
-        c1.setPromocion(set3);
+        //Set set3 = new HashSet();
+        //set3.add(p1);
+        //c1.setPromocion(set3);
         
-        //
+        //Asosiacion Compra entre usuario y promocion
+        Set set4 = new HashSet();
+        set4.add(p1);
+        u1.setPromociones_compradas(set4);
+        
+        Set set5 = new HashSet();
+        set5.add(u1);
+        p1.setCompraron_usuarios(set5);
         
         @SuppressWarnings("deprecation")
         //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();

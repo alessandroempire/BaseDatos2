@@ -46,6 +46,13 @@
               <column name="usuario_id" not-null="true"/>
           </key>
           <one-to-many class="TarjetaCredito"/>
+      </set>
+      
+      <set name="promociones_compradas" table="USER_COMPRA_PROMOCIONES"> 
+          <key> 
+              <column name="usuario_id" not-null="false"/>
+          </key>
+          <many-to-many column="promocion_id" class="Promocion"/>
       </set>    
   </class>
 </hibernate-mapping>

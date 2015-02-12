@@ -30,6 +30,8 @@ public class Promocion {
     private double       puntaje_total; 
     //Asociaciones
     private Set<Categoria> categorias = new HashSet<Categoria>();
+    private Set<Usuario> compraron_usuarios = new HashSet<Usuario>();
+    
     
     
     //Constructor
@@ -133,5 +135,13 @@ public class Promocion {
 
     public void setCategorias(Set<Categoria> categorias) {
         this.categorias = categorias;
+    }
+
+    public Set<Usuario> getCompraron_usuarios() {
+        return compraron_usuarios;
+    }
+
+    public void setCompraron_usuarios(Set<Usuario> compraron_usuarios) {
+        this.compraron_usuarios = compraron_usuarios;
     }
 }
