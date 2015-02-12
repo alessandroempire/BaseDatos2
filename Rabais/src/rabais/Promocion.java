@@ -28,8 +28,10 @@ public class Promocion {
     private Set<String>  pagina_web;
     private int          cantidad_disponible;
     private double       puntaje_total; 
-    //Asociaciones
+    
+    //Asociacion posee_categoria
     private Set<Categoria> categorias = new HashSet<Categoria>();
+    //Asociacion compra
     private Set<Usuario> compraron_usuarios = new HashSet<Usuario>();
     
     

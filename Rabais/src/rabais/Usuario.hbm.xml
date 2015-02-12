@@ -53,6 +53,17 @@
               <column name="usuario_id" not-null="false"/>
           </key>
           <many-to-many column="promocion_id" class="Promocion"/>
-      </set>    
+      </set>   
+      
+      <set name="tiene_amigo" table="USER_AMIGOS" cascade="none" lazy="false">
+          <key column="tiene_amigo_id"/>
+          <many-to-many column="es_amigo_id" class="Usuario"/>
+      </set>
+ 
+      <set name="es_amigo" table="USER_AMIGOS" cascade="none" lazy="false">
+          <key column="es_amigo_id"/>
+          <many-to-many column="tiene_amigo_id" class="Usuario"/>
+      </set>   
+         
   </class>
 </hibernate-mapping>

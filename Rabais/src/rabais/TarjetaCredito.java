@@ -21,7 +21,8 @@ public class TarjetaCredito {
     private String numero;
     private String tarjetahabiente;
     private String tipo; 
-    //Asociaciones
+    
+    //Asociacion posee_tarjeta
     private Usuario usuario; 
     
     //Constructor

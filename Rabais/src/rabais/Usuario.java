@@ -28,9 +28,14 @@ public class Usuario {
     private Set<String>      email;                 //1 o mas correos. 
     private int              promotional_money;
     private Coordenadas      coordinates; 
-    //Asociaciones
+    
+    //Asociacion posee_tarjeta
     private Set<TarjetaCredito> tarjetas = new HashSet<TarjetaCredito>(); 
+    //Asociacion compra
     private Set<Promocion> promociones_compradas = new HashSet<Promocion>(); 
+    //Asociacion posee_amigo (self join)
+    private Set<Usuario> tiene_amigo = new HashSet<Usuario>();
+    private Set<Usuario> es_amigo = new HashSet<Usuario>();
     
     //Constructor
     public Usuario(){}
@@ -128,4 +133,21 @@ public class Usuario {
     public void setPromociones_compradas(Set<Promocion> promociones_compradas) {
         this.promociones_compradas = promociones_compradas;
     }
+
+    public Set<Usuario> getTiene_amigo() {
+        return tiene_amigo;
+    }
+
+    public void setTiene_amigo(Set<Usuario> tiene_amigo) {
+        this.tiene_amigo = tiene_amigo;
+    }
+
+    public Set<Usuario> getEs_amigo() {
+        return es_amigo;
+    }
+
+    public void setEs_amigo(Set<Usuario> es_amigo) {
+        this.es_amigo = es_amigo;
+    }
+    
 }

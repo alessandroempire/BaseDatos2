@@ -19,5 +19,12 @@
         <many-to-many column="categoria_id" class="Promocion" />
     </set>
     
+    <many-to-one name="super_categoria" class="Categoria" column="super_categoria_id" not-null="false"/>
+    
+    <set name="sub_categorias" table="CATEGORY" lazy="false" inverse="false">
+        <key column="super_categoria_id"/>
+        <one-to-many class="Categoria"/>
+    </set>
+    
   </class>
 </hibernate-mapping>

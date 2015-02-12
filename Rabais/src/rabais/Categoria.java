@@ -22,8 +22,15 @@ import java.util.Set;
  */
 public class Categoria {
     private String nombre; 
-    //Asociaciones
+    
+    //Asociacion posee_categoria
     private Set<Promocion> promocion = new HashSet<Promocion>(); 
+    
+    //Asosiacion posee_subcategoria
+        //El rol de categoria (una subcategoria tiene una categoria)
+    private Categoria super_categoria;
+        //El rol de subcategoria (una categoria tiene varias subcategorias)
+    private Set<Categoria> sub_categorias = new HashSet<Categoria>();
     
     //Constructor
     public Categoria(){}
@@ -49,4 +56,21 @@ public class Categoria {
     public void setPromocion(Set<Promocion> promocion) {
         this.promocion = promocion;
     }
+
+    public Categoria getSuper_categoria() {
+        return super_categoria;
+    }
+
+    public void setSuper_categoria(Categoria super_categoria) {
+        this.super_categoria = super_categoria;
+    }
+
+    public Set<Categoria> getSub_categorias() {
+        return sub_categorias;
+    }
+
+    public void setSub_categorias(Set<Categoria> sub_categorias) {
+        this.sub_categorias = sub_categorias;
+    }
+    
 }
