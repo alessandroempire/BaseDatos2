@@ -21,6 +21,8 @@ public class TarjetaCredito {
     private String numero;
     private String tarjetahabiente;
     private String tipo; 
+    //Asociaciones
+    private Usuario usuario; 
     
     //Constructor
     public TarjetaCredito(){}
@@ -55,5 +57,13 @@ public class TarjetaCredito {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

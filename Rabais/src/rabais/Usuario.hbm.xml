@@ -40,6 +40,12 @@
             <property column="USER_LONGITUDE_SECONDS" name="seconds"/>
         </component>  
       </component>
-    
+
+      <set name="tarjetas" table="USER_TARJETA_CREDITO_LIST" inverse="true" lazy="true" fetch="select">
+          <key>
+              <column name="usuario_id" not-null="true"/>
+          </key>
+          <one-to-many class="TarjetaCredito"/>
+      </set>    
   </class>
 </hibernate-mapping>

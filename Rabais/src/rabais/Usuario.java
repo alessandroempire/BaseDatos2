@@ -28,6 +28,8 @@ public class Usuario {
     private Set<String>      email;                 //1 o mas correos. 
     private int              promotional_money;
     private Coordenadas      coordinates; 
+    //Asociaciones
+    private Set<TarjetaCredito> tarjetas; 
     
     //Constructor
     public Usuario(){}
@@ -108,5 +110,13 @@ public class Usuario {
 
     public void setCoordinates(Coordenadas coordinates) {
         this.coordinates = coordinates;
+    }
+
+    public Set<TarjetaCredito> getTarjetas() {
+        return tarjetas;
+    }
+
+    public void setTarjetas(Set<TarjetaCredito> tarjetas) {
+        this.tarjetas = tarjetas;
     }
 }

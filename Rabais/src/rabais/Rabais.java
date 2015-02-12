@@ -9,6 +9,9 @@ package rabais;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import java.sql.Date; 
+import java.util.HashSet;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @Autores:
@@ -43,17 +46,28 @@ public class Rabais {
         Usuario u1 = new Usuario("ale", "alcpass", "alessandro", "la corte", 
                 date, "alec@gmail.com", 1000, coor);
         
+        //Asosiaciones usuario y tarjeta de credito
+        Set set1 = new HashSet();
+        set1.add(t1);
+        u1.setTarjetas(set1);
+        
+        t1.setUsuario(u1);
+        
+        //
+        
+        
         @SuppressWarnings("deprecation")
         //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
+        session.save(u1); //se tiene que salvar u1 antes que t1
         session.save(t1);
         session.save(c1);
         session.save(e1);
         session.save(p1);
-        session.save(u1);
+        
 
         session.getTransaction().commit();
         session.close();

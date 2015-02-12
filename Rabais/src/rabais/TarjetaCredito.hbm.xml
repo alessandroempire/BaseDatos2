@@ -10,5 +10,9 @@
    
       <property column="CREDIT_TIPO" name="tipo" not-null="true"/>
  
+      <many-to-one name="usuario" class="Usuario" fetch="select">
+          <column name="usuario_id" not-null="true"/>
+      </many-to-one>
+      
   </class>
 </hibernate-mapping>
