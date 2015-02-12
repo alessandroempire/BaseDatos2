@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="rabais">
+    
+  <class dynamic-insert="false" 
+         dynamic-update="false" 
+         mutable="true" 
+         name="rabais.Empresa" 
+         optimistic-lock="version" 
+         polymorphism="implicit" 
+         select-before-update="false" 
+         table="EMPRESA">
+      
+    <id column="EMPRESA_NOMBRE" name="nombre"/>
+    
+    <property column="EMPRESA_RAZON_S" name="razon_social"/>
+    
+    <set name="telefonos" table="EMPRESA_TLF_TABLE">
+      <key column="EMPRESA_NOMBRE"/>
+      <element column="EMPRESA_TLF" type="string"/>
+    </set>
+    
+    <set name="correos" table="EMPRESA_CORREOS_TABLE">
+      <key column="EMPRESA_NOMBRE"/>
+      <element column="EMPRESA_CORREO" type="string"/>
+    </set>
+    
+    <property column="EMPRESA_NUM_CLIENTES" name="numero_clientes"/>
+    
+    <component class="Direccion" name="address">
+      <property column="EMPRESA_DIR_CALLE" name="calle"/>
+      <property column="EMPRESA_DIR_URB" name="urbanizacion"/>
+      <property column="EMPRESA_DIR_NOMBRE" name="nombre"/>
+      <property column="EMPRESA_DIR_NUM" name="numero"/>
+      <property column="EMPRESA_DIR_COD_POSTAL" name="codigo_postal"/>
+    </component>
+  
+  </class>
+</hibernate-mapping>

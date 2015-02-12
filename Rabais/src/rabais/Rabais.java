@@ -1,12 +1,11 @@
+package rabais;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-
-
-import com.sun.xml.internal.bind.v2.runtime.Coordinator;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import java.sql.Date; 
@@ -45,7 +44,8 @@ public class Rabais {
                 date, "alec@gmail.com", 1000, coor);
         
         @SuppressWarnings("deprecation")
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
