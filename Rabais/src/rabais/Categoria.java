@@ -1,5 +1,8 @@
 package rabais;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 
 /*
@@ -19,6 +22,8 @@ package rabais;
  */
 public class Categoria {
     private String nombre; 
+    //Asociaciones
+    private Set<Promocion> promocion = new HashSet<Promocion>(); 
     
     //Constructor
     public Categoria(){}
@@ -36,5 +41,12 @@ public class Categoria {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    public Set<Promocion> getPromocion() {
+        return promocion;
+    }
+
+    public void setPromocion(Set<Promocion> promocion) {
+        this.promocion = promocion;
+    }
 }

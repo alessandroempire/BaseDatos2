@@ -33,6 +33,13 @@
     <property column="PROMOCION_CANT_DISPONIBLE" name="cantidad_disponible" not-null="true"/>
     
     <property column="PROMOCION_PUNTAJE_TOTAL" name="puntaje_total" not-null="true"/>
+    
+    <set name="categorias" table="PROMOCION_LIST_CATEGORIA" inverse="true" lazy="true" fetch="select">
+        <key> 
+            <column name="promocion_id" not-null="true"/>
+        </key>
+        <many-to-many column="categoria_id" class="Categoria"/>
+    </set>
   
   </class>
 </hibernate-mapping>

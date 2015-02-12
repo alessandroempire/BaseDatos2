@@ -53,8 +53,16 @@ public class Rabais {
         
         t1.setUsuario(u1);
         
-        //
+        //Asosiacion promocion y categoria
+        Set set2 = new HashSet();
+        set2.add(c1);
+        p1.setCategorias(set2);
         
+        Set set3 = new HashSet();
+        set3.add(p1);
+        c1.setPromocion(set3);
+        
+        //
         
         @SuppressWarnings("deprecation")
         //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -64,9 +72,11 @@ public class Rabais {
 
         session.save(u1); //se tiene que salvar u1 antes que t1
         session.save(t1);
+        
+        session.save(p1); //p1 antes que c1
         session.save(c1);
+        
         session.save(e1);
-        session.save(p1);
         
 
         session.getTransaction().commit();

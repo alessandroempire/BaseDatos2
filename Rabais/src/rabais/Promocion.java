@@ -28,7 +28,9 @@ public class Promocion {
     private Set<String>  pagina_web;
     private int          cantidad_disponible;
     private double       puntaje_total; 
-    //imagenes?
+    //Asociaciones
+    private Set<Categoria> categorias = new HashSet<Categoria>();
+    
     
     //Constructor
     public Promocion(){}
@@ -123,5 +125,13 @@ public class Promocion {
 
     public void setPuntaje_total(double puntaje_total) {
         this.puntaje_total = puntaje_total;
+    }
+
+    public Set<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(Set<Categoria> categorias) {
+        this.categorias = categorias;
     }
 }

@@ -12,5 +12,12 @@
       
     <id column="CATEGORIA_NOMBRE" name="nombre"/>
     
+    <set name="promocion" table="CATEGORIA_LIST_PROMOCION">
+        <key>
+            <column name="promocion_id" not-null="true"/>
+        </key>
+        <many-to-many column="categoria_id" class="Promocion" />
+    </set>
+    
   </class>
 </hibernate-mapping>
