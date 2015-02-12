@@ -6,9 +6,9 @@
     
       <id column="CREDIT_NUMERO" name="numero"/>
     
-      <property column="CREDIT_TARJETAHABIENTE" name="tarjetahabiente"/>
+      <property column="CREDIT_TARJETAHABIENTE" name="tarjetahabiente" not-null="true"/>
    
-      <property column="CREDIT_TIPO" name="tipo"/>
+      <property column="CREDIT_TIPO" name="tipo" not-null="true"/>
  
   </class>
 </hibernate-mapping>

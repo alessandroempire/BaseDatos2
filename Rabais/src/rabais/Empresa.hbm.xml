@@ -17,22 +17,22 @@
     
     <set name="telefonos" table="EMPRESA_TLF_TABLE">
       <key column="EMPRESA_NOMBRE"/>
-      <element column="EMPRESA_TLF" type="string"/>
+      <element column="EMPRESA_TLF" type="string" not-null="true"/>
     </set>
     
     <set name="correos" table="EMPRESA_CORREOS_TABLE">
       <key column="EMPRESA_NOMBRE"/>
-      <element column="EMPRESA_CORREO" type="string"/>
+      <element column="EMPRESA_CORREO" type="string" not-null="true"/>
     </set>
     
     <property column="EMPRESA_NUM_CLIENTES" name="numero_clientes"/>
     
     <component class="Direccion" name="address">
-      <property column="EMPRESA_DIR_CALLE" name="calle"/>
-      <property column="EMPRESA_DIR_URB" name="urbanizacion"/>
+      <property column="EMPRESA_DIR_CALLE" name="calle" not-null="true"/>
+      <property column="EMPRESA_DIR_URB" name="urbanizacion" not-null="true"/>
       <property column="EMPRESA_DIR_NOMBRE" name="nombre"/>
       <property column="EMPRESA_DIR_NUM" name="numero"/>
-      <property column="EMPRESA_DIR_COD_POSTAL" name="codigo_postal"/>
+      <property column="EMPRESA_DIR_COD_POSTAL" name="codigo_postal" not-null="true"/>
     </component>
   
   </class>

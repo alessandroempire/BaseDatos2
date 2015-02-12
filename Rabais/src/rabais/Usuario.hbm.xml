@@ -13,20 +13,20 @@
    
       <id column="USER_LOGIN" name="login"/>
    
-      <property column="USER_PASSWORD" name="password"/>
+      <property column="USER_PASSWORD" name="password" not-null="true"/>
 
-      <property column="USER_NAME" name="name"/>
+      <property column="USER_NAME" name="name" />
 
       <property column="USER_LAST_NAME" name="last_name"/>
 
-      <property column="USER_BIRTH_DATE" name="birth_date" type="date"/>
+      <property column="USER_BIRTH_DATE" name="birth_date" type="date" not-null="true"/>
        
       <set name="email" table="USER_EMAIL_TABLE">
           <key column="USER_LOGIN"/>
-          <element column="USER_EMAIL" type="string"/>
+          <element column="USER_EMAIL" type="string" not-null="true"/>
       </set>
     
-      <property column="USER_PROMOTIONAL_MONEY" name="promotional_money"/>
+      <property column="USER_PROMOTIONAL_MONEY" name="promotional_money" not-null="true"/>
     
       <component class="rabais.Coordenadas" name="coordinates">          
         <component class="DMS" name="latitude">

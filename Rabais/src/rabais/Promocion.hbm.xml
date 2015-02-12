@@ -12,27 +12,27 @@
       
     <id column="PROMOCION_NOMBRE" name="nombre_promocion"/>
     
-    <property column="PROMOCION_DESC_BREVE" name="descripcion_breve"/>
+    <property column="PROMOCION_DESC_BREVE" name="descripcion_breve" not-null="true" />
     
-    <property column="PROMOCION_DESC_COMPLETA" name="descripcion_completa"/>
+    <property column="PROMOCION_DESC_COMPLETA" name="descripcion_completa" not-null="true"/>
     
-    <property column="PROMOCION_DESC_ADICIONAL" name="descripcion_adicional"/>
+    <property column="PROMOCION_DESC_ADICIONAL" name="descripcion_adicional" not-null="false"/>
     
-    <property column="PROMOCION_MONTO_ORIGINAL" name="monto_original"/>
+    <property column="PROMOCION_MONTO_ORIGINAL" name="monto_original" not-null="true"/>
    
     <set name="palabras_claves" table="PROMOCION_PALABRA_CLAVE_TABLE">
       <key column="PROMOCION_NOMBRE"/>
-      <element column="PROMOCION_PALABRA_CLAVE" type="string"/>
+      <element column="PROMOCION_PALABRA_CLAVE" type="string" not-null="false"/>
     </set>
    
     <set name="pagina_web" table="PROMOCION_PAG_WEB_TABLE">
       <key column="PROMOCION_NOMBRE"/>
-      <element column="PROMOCION_PAGINA_WEB" type="string"/>
+      <element column="PROMOCION_PAGINA_WEB" type="string" not-null="false"/>
     </set>
     
-    <property column="PROMOCION_CANT_DISPONIBLE" name="cantidad_disponible"/>
+    <property column="PROMOCION_CANT_DISPONIBLE" name="cantidad_disponible" not-null="true"/>
     
-    <property column="PROMOCION_PUNTAJE_TOTAL" name="puntaje_total"/>
+    <property column="PROMOCION_PUNTAJE_TOTAL" name="puntaje_total" not-null="true"/>
   
   </class>
 </hibernate-mapping>
