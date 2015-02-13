@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="rabais">
+  <class dynamic-insert="false" 
+         dynamic-update="false" 
+         mutable="true" 
+         name="rabais.Oferta" 
+         table="OFERTA"
+         optimistic-lock="version" 
+         polymorphism="implicit" 
+         select-before-update="false">
+      
+      <id name="id" column="OFERTA_ID">
+          <generator class="native"/>
+      </id>
+      
+      <property name="fecha_publicacion" column="OFERTA_FECHA_PUBLICACION" type="date"/>
+      <property name="cantidad" column="OFERTA_CANTIDAD"/>
+      <property name="monto_ofertado" column="OFERTA_MONTO_OFERTADO" type="double"/>
+      <property name="porcentaje_descuento" column="OFERTA_PORCENTAJE_DESCUENTO"/>
+      
+      <set name="fecha_de_vigencia" table="OFERTADO_FECHAS_VIGENTE_LIST"> 
+          <key column="OFERTA_ID"/>
+          <element column="OFERTA_FECHA_VIGENCIA" type="string" not-null="true"/>
+      </set>
+      
+      <many-to-one name="empresa" class="Empresa" fetch="select">
+          <column name="empresa_id" not-null="true"/>
+      </many-to-one>
+      
+      <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
+      
+  </class>
+</hibernate-mapping>

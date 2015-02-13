@@ -26,6 +26,8 @@ public class Empresa {
     private Set<String>  correos;
     private int          numero_clientes;
     private Direccion    address; 
+    //Asociacion oferta
+    private Set<Oferta> oferta = new HashSet<Oferta>();
     
     //Constructor
     public Empresa(){}
@@ -91,4 +93,13 @@ public class Empresa {
     public void setAddress(Direccion address) {
         this.address = address;
     }
+
+    public Set<Oferta> getOferta() {
+        return oferta;
+    }
+
+    public void setOferta(Set<Oferta> oferta) {
+        this.oferta = oferta;
+    }
+    
 }

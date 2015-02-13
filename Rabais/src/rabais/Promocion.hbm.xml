@@ -47,6 +47,9 @@
         </key>
         <many-to-many column="usuario_id" class="Usuario"/>
     </set>
+    
+    <!-- este one to one le quite el constrained="true" -->
+    <one-to-one name="ofertadas" class="Oferta" />
   
   </class>
 </hibernate-mapping>

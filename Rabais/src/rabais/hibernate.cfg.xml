@@ -24,5 +24,6 @@
     <mapping resource="rabais/Empresa.hbm.xml"/>
     <mapping resource="rabais/Promocion.hbm.xml"/>
     <mapping resource="rabais/Usuario.hbm.xml"/>
+    <mapping resource="rabais/Oferta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

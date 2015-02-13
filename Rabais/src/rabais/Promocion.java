@@ -33,8 +33,8 @@ public class Promocion {
     private Set<Categoria> categorias = new HashSet<Categoria>();
     //Asociacion compra
     private Set<Usuario> compraron_usuarios = new HashSet<Usuario>();
-    
-    
+    //Asociacion Oferta
+    private Oferta ofertadas;
     
     //Constructor
     public Promocion(){}
@@ -145,5 +145,13 @@ public class Promocion {
 
     public void setCompraron_usuarios(Set<Usuario> compraron_usuarios) {
         this.compraron_usuarios = compraron_usuarios;
+    }
+
+    public Oferta getOfertadas() {
+        return ofertadas;
+    }
+
+    public void setOfertadas(Oferta ofertadas) {
+        this.ofertadas = ofertadas;
     }
 }

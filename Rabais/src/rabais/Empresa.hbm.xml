@@ -34,6 +34,13 @@
       <property column="EMPRESA_DIR_NUM" name="numero"/>
       <property column="EMPRESA_DIR_COD_POSTAL" name="codigo_postal" not-null="true"/>
     </component>
+    
+    <set name="oferta" table="EMPRESA_OFERTAS" inverse="true" lazy="true" fetch="select">
+        <key>
+            <column name="empresa_id" not-null="false"/>
+        </key>
+        <one-to-many class="Oferta"/>
+    </set>
   
   </class>
 </hibernate-mapping>
