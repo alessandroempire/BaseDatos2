@@ -1,4 +1,5 @@
 repositorio para el codigo del proyecto de base de datos2
+El proyecto se desarrollo en NETBEANS
 
 Ejecutar
 sudo apt-get install mysql-client-5.5
@@ -20,3 +21,7 @@ Salir de la sesion de mysql y ejecutar
 
 mysql -h locahost -u alessandro -p
 el password es alcpass
+
+
+
+Las 3 consultas propuestas a implementar:
