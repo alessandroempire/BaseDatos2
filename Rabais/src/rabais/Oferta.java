@@ -6,8 +6,6 @@ package rabais;
  * and open the template in the editor.
  */
 
-
-
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +16,8 @@ import java.util.Set;
  * Catherine Lollett 
  * 
  * @Descripcion:
+ * Se tradujo a:
+ * Empresa 1-----------* Oferta 1--------------1 Promocion 
  */
 public class Oferta {
     private Long      id; //clave postiza 

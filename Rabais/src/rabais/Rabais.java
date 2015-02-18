@@ -68,19 +68,79 @@ public class Rabais {
         
         Empresa e1 = new Empresa("empresa1", "belleza", "0414", "b@gmail.com", 10, d1);
         Empresa e2 = new Empresa("empresa2", "tecnologia", "0416", "t@gmail.com", 101, d1);
-        Empresa e3 = new Empresa("empresa3", "de todo", "0426", "de@gmail.com", 60, d1);
+        Empresa e3 = new Empresa("empresa3", "comida", "0426", "de@gmail.com", 60, d1);
         
         //Oferta
         date = new Date(2015, 17, 2);
         Set set4 = new HashSet();
         Date date1 = new Date(2015, 17, 3);
         set4.add(date1);
-        Oferta o1 = new Oferta(date, 10, 30, 12, set4, e1, null);
+        Oferta o1 = new Oferta(date, 10, 6, 2, set4, e1, null);
+        date = new Date(2013, 1, 10);
+        Oferta o2 = new Oferta(date, 20, 91, 76, set4, e2, null);
+        date = new Date(2015, 21, 9);
+        Oferta o3 = new Oferta(date, 3, 76, 32, set4, e3, null);
         
         //Promocion
+        Promocion p1 = new Promocion("depilado", "des breve", "des comple", 
+                "desp adicional", 10.2, "depilado", "www.waxof.com", 
+                12, 4.0);
+        Promocion p2 = new Promocion("iphone barato", "des breve", "des comple", 
+                "desp adicional", 10.2, "iphone", "www apple.com", 
+                100, 4.2);
+        Promocion p3 = new Promocion("pizzas ricas", "des breve", "des comple", 
+                "desp adicional", 10.2, "pizza", "www.romanina.com", 
+                500, 5);
+        
+        //Clase asosiacion oferta
+            //a cada empresa le agregamos una oferta (puede ser null)
+        Set seto1 = new HashSet();
+        seto1.add(o1);
+        e1.setOferta(seto1);
+        Set seto2 = new HashSet();
+        seto2.add(o2);
+        e2.setOferta(seto2);
+        Set seto3 = new HashSet();
+        seto3.add(o3);
+        e3.setOferta(seto3);
+            //a cada oferta le agregamos la promocion
+        o1.setPromocion(p1);
+        o2.setPromocion(p2);
+        o3.setPromocion(p3);
+            //a cada oferta le agregmaos la empresa
+        o1.setEmpresa(e1);
+        o2.setEmpresa(e2);
+        o3.setEmpresa(e3);
+            //a cada promocion le colocamos su oferta
+        p1.setOfertadas(o1);
+        p2.setOfertadas(o2);
+        p3.setOfertadas(o3);
         
         
         //Categoria
+        Categoria c1 = new Categoria("electrodomestico");
+        Categoria c11 = new Categoria("celulares");
+        Categoria c2 = new Categoria("belleza corporal");
+        Categoria c3 = new Categoria("restaurantes");
+        
+        //Probar las subcategorais
+        Set set5 = new HashSet();
+        set5.add(c11);
+        c1.setSub_categorias(set5);
+        c11.setSuper_categoria(c1);
+        
+        //cada promocion tiene subcategorias
+        Set set6 = new HashSet();
+        set6.add(c1);
+        p1.setCategorias(set6);
+        
+        Set set7 = new HashSet();
+        set7.add(c2);
+        p2.setCategorias(set7);
+        
+        Set set8 = new HashSet();
+        set8.add(c3);
+        p3.setCategorias(set8);
         
         @SuppressWarnings("deprecation")
         //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -100,6 +160,19 @@ public class Rabais {
         session.save(e1);
         session.save(e2);
         session.save(e3);
+        
+        session.save(c1);
+        session.save(c11);
+        session.save(c2);
+        session.save(c3);
+        
+        session.save(o1);
+        session.save(o2);
+        session.save(o3);
+        
+        session.save(p1);
+        session.save(p2);
+        session.save(p3);
        
         session.getTransaction().commit();
         session.close();

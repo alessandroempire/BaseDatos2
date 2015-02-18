@@ -21,7 +21,7 @@
       
       <set name="fecha_de_vigencia" table="OFERTADO_FECHAS_VIGENTE_LIST"> 
           <key column="OFERTA_ID"/>
-          <element column="OFERTA_FECHA_VIGENCIA" type="string" not-null="true"/>
+          <element column="OFERTA_FECHA_VIGENCIA" type="date" not-null="true"/>
       </set>
       
       <many-to-one name="empresa" class="Empresa" fetch="select">
