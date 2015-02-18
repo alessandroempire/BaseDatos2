@@ -63,16 +63,24 @@ public class Rabais {
         t3.setUsuario(u3);
         t4.setUsuario(u3);
         
-        //Promociones
-        Promocion p1 = new Promocion("nombre promotion", "des breve", "des comple", 
-                "desp adicional", 10.2, "words claves", "www algo", 
-                666, 4.5);
-        Promocion p2 = new Promocion("iphone rebajado", "des breve", "des comple", 
-                "desp adicional", 10.2, "words claves", "www algo", 
-                666, 4.5);
-        Promocion p3 = new Promocion("samsung rebajado", "des breve", "des comple", 
-                "desp adicional", 10.2, "words claves", "www algo", 
-                666, 4.5);
+        //Empresas
+        Direccion d1 = new Direccion("calle", "urba", "nombre", 5, "1080");
+        
+        Empresa e1 = new Empresa("empresa1", "belleza", "0414", "b@gmail.com", 10, d1);
+        Empresa e2 = new Empresa("empresa2", "tecnologia", "0416", "t@gmail.com", 101, d1);
+        Empresa e3 = new Empresa("empresa3", "de todo", "0426", "de@gmail.com", 60, d1);
+        
+        //Oferta
+        date = new Date(2015, 17, 2);
+        Set set4 = new HashSet();
+        Date date1 = new Date(2015, 17, 3);
+        set4.add(date1);
+        Oferta o1 = new Oferta(date, 10, 30, 12, set4, e1, null);
+        
+        //Promocion
+        
+        
+        //Categoria
         
         @SuppressWarnings("deprecation")
         //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -88,6 +96,10 @@ public class Rabais {
         session.save(t2);
         session.save(t3);
         session.save(t4);
+        
+        session.save(e1);
+        session.save(e2);
+        session.save(e3);
        
         session.getTransaction().commit();
         session.close();

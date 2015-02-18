@@ -34,7 +34,9 @@ public class Oferta {
     public Oferta(){}
     
     //Constructor
-    public Oferta(Date fecha_publicacion, int cantidad, double monto_ofertado, int porcentaje_descuento, Set<Date> fecha_de_vigencia, Empresa empresa, Promocion promocion) {
+    public Oferta(Date fecha_publicacion, int cantidad, double monto_ofertado, 
+            int porcentaje_descuento, Set<Date> fecha_de_vigencia, 
+            Empresa empresa, Promocion promocion) {
         this.fecha_publicacion = fecha_publicacion;
         this.cantidad = cantidad;
         this.monto_ofertado = monto_ofertado;
@@ -45,7 +47,9 @@ public class Oferta {
     }
     
     //Constructor
-    public Oferta(Long id, Date fecha_publicacion, int cantidad, double monto_ofertado, int porcentaje_descuento, Set<Date> fecha_de_vigencia, Empresa empresa, Promocion promocion) {
+    public Oferta(Long id, Date fecha_publicacion, int cantidad, 
+            double monto_ofertado, int porcentaje_descuento, 
+            Set<Date> fecha_de_vigencia, Empresa empresa, Promocion promocion) {
         this.id = id;
         this.fecha_publicacion = fecha_publicacion;
         this.cantidad = cantidad;
