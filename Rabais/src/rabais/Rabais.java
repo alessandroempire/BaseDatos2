@@ -10,7 +10,6 @@ import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import java.sql.Date; 
 import java.util.HashSet;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -22,9 +21,21 @@ import java.util.Set;
  */
 public class Rabais {
     
-    /**
-     * @param args the command line arguments
-     */
+    //Dar toda la informacion de una consulta.
+    public static void consulta1(String nombre_promocion){
+        
+    }
+    
+    //listar las promociones por un rango de precio
+    public static void consulta2(double lower_price, double high_price){
+        
+    }
+    
+    //dada una categoria, listar todas las promociones
+    public static void consulta3(String categorias){
+        
+    }
+    
     public static void main(String[] args) {
         System.out.println("Rabais!");
         

@@ -25,3 +25,6 @@ el password es alcpass
 
 
 Las 3 consultas propuestas a implementar:
+1) Dada el nombre de una promocion, listar toda la informacion acerca de esa promocion. 
+2) Dado un rango de precio, listar todas las promociones que cumplen esa condicion.  
+3) Dado el nombre de una categoria, listar todas las promociones que pertenecen a esa categoria. 
