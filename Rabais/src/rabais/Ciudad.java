@@ -62,4 +62,12 @@ public class Ciudad {
     public void setCoordenadas(Coordenadas coordenadas) {
         this.coordenadas = coordenadas;
     }
+
+    @Override
+    public String toString() {
+        return "Ciudad{" + "nombre=" + nombre + 
+                ", estado=" + estado + 
+                ", pais=" + pais + 
+                ", coordenadas=" + coordenadas + '}';
+    }
 }

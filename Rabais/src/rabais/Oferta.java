@@ -123,4 +123,16 @@ public class Oferta {
     public void setPromocion(Promocion promocion) {
         this.promocion = promocion;
     }
+
+    @Override
+    public String toString() {
+        return "Oferta{" + "id=" + id + 
+                ", fecha_publicacion=" + fecha_publicacion + 
+                ", cantidad=" + cantidad + 
+                ", monto_ofertado=" + monto_ofertado 
+                + ", porcentaje_descuento=" + porcentaje_descuento + 
+                ", fecha_de_vigencia=" + fecha_de_vigencia + 
+                ", empresa=" + empresa + 
+                ", promocion=" + promocion + '}';
+    }
 }

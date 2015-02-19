@@ -72,5 +72,12 @@ public class Categoria {
     public void setSub_categorias(Set<Categoria> sub_categorias) {
         this.sub_categorias = sub_categorias;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Categoria{" + "nombre=" + nombre + 
+                ", promocion=" + promocion + 
+                ", super_categoria=" + super_categoria + 
+                ", sub_categorias=" + sub_categorias + '}';
+    }
 }

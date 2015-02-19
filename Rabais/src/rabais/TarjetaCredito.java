@@ -67,4 +67,13 @@ public class TarjetaCredito {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return "TarjetaCredito{" + "numero=" + numero + 
+                ", tarjetahabiente=" + tarjetahabiente + 
+                ", tipo=" + tipo + ", "
+                + "usuario=" + usuario + '}';
+    }
+    
 }

@@ -154,4 +154,20 @@ public class Promocion {
     public void setOfertadas(Oferta ofertadas) {
         this.ofertadas = ofertadas;
     }
+
+    @Override
+    public String toString() {
+        return "Promocion{" + "nombre_promocion=" + nombre_promocion + 
+                ", descripcion_breve=" + descripcion_breve + 
+                ", descripcion_completa=" + descripcion_completa + 
+                ", descripcion_adicional=" + descripcion_adicional + 
+                ", monto_original=" + monto_original + 
+                ", palabras_claves=" + palabras_claves + 
+                ", pagina_web=" + pagina_web + 
+                ", cantidad_disponible=" + cantidad_disponible + 
+                ", puntaje_total=" + puntaje_total + 
+                ", categorias=" + categorias + 
+                ", compraron_usuarios=" + compraron_usuarios + 
+                ", ofertadas=" + ofertadas + '}';
+    }    
 }

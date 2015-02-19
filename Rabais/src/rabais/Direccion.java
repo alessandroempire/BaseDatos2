@@ -77,5 +77,13 @@ public class Direccion {
     public void setCodigo_postal(String codigo_postal) {
         this.codigo_postal = codigo_postal;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Direccion{" + "calle=" + calle + 
+                ", urbanizacion=" + urbanizacion + 
+                ", nombre=" + nombre + 
+                ", numero=" + numero + 
+                ", codigo_postal=" + codigo_postal + '}';
+    }
 }

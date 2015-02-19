@@ -41,4 +41,11 @@ public class Viaje {
     public void setRecomendaciones(Promocion recomendaciones) {
         this.recomendaciones = recomendaciones;
     }
+
+    @Override
+    public String toString() {
+        return "Viaje{" + "ciudad_destino=" + ciudad_destino + 
+                ", recomendaciones=" + recomendaciones + '}';
+    }
+    
 }

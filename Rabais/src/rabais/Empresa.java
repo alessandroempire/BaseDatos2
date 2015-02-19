@@ -98,5 +98,15 @@ public class Empresa {
     public void setOferta(Set<Oferta> oferta) {
         this.oferta = oferta;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Empresa{" + "nombre=" + nombre + 
+                ", razon_social=" + razon_social + 
+                ", telefonos=" + telefonos + 
+                ", correos=" + correos + 
+                ", numero_clientes=" + numero_clientes + 
+                ", address=" + address + 
+                ", oferta=" + oferta + '}';
+    }
 }

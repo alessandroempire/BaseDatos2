@@ -45,4 +45,11 @@ public class Coordenadas {
     public void setLongitude(DMS longitude) {
         this.longitude = longitude;
     }
+
+    @Override
+    public String toString() {
+        return "Coordenadas{" + "latitude=" + latitude + 
+                ", longitude=" + longitude + '}';
+    }
+    
 }

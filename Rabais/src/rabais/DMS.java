@@ -57,5 +57,11 @@ public class DMS {
     public void setSeconds(int seconds) {
         this.seconds = seconds;
     }
-    
+
+    @Override
+    public String toString() {
+        return "DMS{" + "degree=" + degree + 
+                ", minutes=" + minutes + 
+                ", seconds=" + seconds + '}';
+    }
 }

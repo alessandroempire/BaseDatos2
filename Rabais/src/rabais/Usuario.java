@@ -149,5 +149,20 @@ public class Usuario {
     public void setEs_amigo(Set<Usuario> es_amigo) {
         this.es_amigo = es_amigo;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "login=" + login + 
+                ", password=" + password + 
+                ", name=" + name + 
+                ", last_name=" + last_name + 
+                ", birth_date=" + birth_date + 
+                ", email=" + email + 
+                ", promotional_money=" + promotional_money + 
+                ", coordinates=" + coordinates + 
+                ", tarjetas=" + tarjetas + 
+                ", promociones_compradas=" + promociones_compradas + 
+                ", tiene_amigo=" + tiene_amigo + 
+                ", es_amigo=" + es_amigo + '}';
+    }
 }

@@ -8,8 +8,10 @@ package rabais;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.Session;
 import java.sql.Date; 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,9 +23,17 @@ import java.util.Set;
  */
 public class Rabais {
     
-    //Dar toda la informacion de una consulta.
-    public static void consulta1(String nombre_promocion){
+    //Dar toda la informacion de una promocion.
+    public static String consulta1(String nombre_promocion){
+        SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();
+        Session session = sessionFactory.openSession();
         
+        String p_info = session.createQuery("from PROMOCION").toString();
+        
+        session.close();
+        sessionFactory.close();
+        
+        return p_info;
     }
     
     //listar las promociones por un rango de precio
@@ -186,6 +196,20 @@ public class Rabais {
         session.save(p3);
        
         session.getTransaction().commit();
+        
+        //consulta1
+        System.out.println("CONSULTA1");
+        String hql = "FROM rabais.Promocion p WHERE p.nombre_promocion = :promotion_name";
+        Query q = session.createQuery(hql);
+        q.setParameter("promotion_name", "depilado");
+        //String p_info = session.createQuery("FROM PROMOCION").toString();
+        List list = q.list();
+        
+        for (int i=0; i < list.size(); i++){
+            String info = list.get(i).toString();
+            System.out.println(info);
+        }
+        
         session.close();
         sessionFactory.close();
         

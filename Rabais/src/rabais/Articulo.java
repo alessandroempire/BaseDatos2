@@ -72,4 +72,13 @@ public class Articulo {
     public void setDetalle_envio(String detalle_envio) {
         this.detalle_envio = detalle_envio;
     }
+
+    @Override
+    public String toString() {
+        return "Articulo{" + "direccion_envio=" + direccion_envio + 
+                ", nombre_enviado=" + nombre_enviado + 
+                ", mensaje=" + mensaje + 
+                ", precio_envio=" + precio_envio + 
+                ", detalle_envio=" + detalle_envio + '}';
+    }
 }
