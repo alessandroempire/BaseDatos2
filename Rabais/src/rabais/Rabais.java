@@ -210,6 +210,11 @@ public class Rabais {
             System.out.println(info);
         }
         
+        //Consulta2
+        
+        
+        //Consulta3
+        
         session.close();
         sessionFactory.close();
         
