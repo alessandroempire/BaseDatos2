@@ -24,21 +24,57 @@ import java.util.Set;
 public class Rabais {
     
     //Dar toda la informacion de una promocion.
-    public static String consulta1(String nombre_promocion){
-        SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();
-        Session session = sessionFactory.openSession();
+    public static List consulta1(String nombre_promocion, Session session){
+        System.out.println("CONSULTA1");
+        String hql = "FROM rabais.Promocion p " + 
+                     "WHERE p.nombre_promocion = :promotion_name";
+        Query q = session.createQuery(hql);
+        q.setParameter("promotion_name", nombre_promocion);
+        List list = q.list();
         
-        String p_info = session.createQuery("from PROMOCION").toString();
+        //Imprimir el resultado
+        for (int i=0; i < list.size(); i++){
+            String info = list.get(i).toString();
+            System.out.println(info);
+        }
         
-        session.close();
-        sessionFactory.close();
-        
-        return p_info;
+        return list; 
     }
     
     //listar las promociones por un rango de precio
-    public static void consulta2(double lower_price, double high_price){
+    public static List consulta2(double lower_price, double high_price, 
+            Session session){
         
+        System.out.println("CONSULTA2");
+        
+        /*
+        String hql = "select oft.promocion " +
+                     "from rabais.Oferta oft " + 
+                     "where oft.monto_ofertado > :lw " +
+                       "and oft.monto_ofertado < :hp" ;
+        */
+        
+        
+        String hql = "select p.nombre_promocion " +
+                     "from rabais.Promocion as p " +
+                     "join p.ofertadas " +
+                     "with p.ofertadas.monto_ofertado < 100.0";
+                     
+                
+        
+        Query q = session.createQuery(hql);
+        //q.setParameter("lw", lower_price);
+        //q.setParameter("hp", high_price);
+        
+        List list = q.list();
+        
+        //Imprimir el resultado
+        for (int i=0; i < list.size(); i++){
+            String info = list.get(i).toString();
+            System.out.println(info);
+        }
+        
+        return list; 
     }
     
     //dada una categoria, listar todas las promociones
@@ -96,9 +132,9 @@ public class Rabais {
         Set set4 = new HashSet();
         Date date1 = new Date(2015, 17, 3);
         set4.add(date1);
-        Oferta o1 = new Oferta(date, 10, 6, 2, set4, e1, null);
+        Oferta o1 = new Oferta(date, 10, 80, 2, set4, e1, null);
         date = new Date(2013, 1, 10);
-        Oferta o2 = new Oferta(date, 20, 91, 76, set4, e2, null);
+        Oferta o2 = new Oferta(date, 20, 91, 12, set4, e2, null);
         date = new Date(2015, 21, 9);
         Oferta o3 = new Oferta(date, 3, 76, 32, set4, e3, null);
         
@@ -198,20 +234,11 @@ public class Rabais {
         session.getTransaction().commit();
         
         //consulta1
-        System.out.println("CONSULTA1");
-        String hql = "FROM rabais.Promocion p WHERE p.nombre_promocion = :promotion_name";
-        Query q = session.createQuery(hql);
-        q.setParameter("promotion_name", "depilado");
-        //String p_info = session.createQuery("FROM PROMOCION").toString();
-        List list = q.list();
-        
-        for (int i=0; i < list.size(); i++){
-            String info = list.get(i).toString();
-            System.out.println(info);
-        }
+        consulta1("depilado", session);
+        consulta1("iphone barato", session);
         
         //Consulta2
-        
+        consulta2(78.0, 100.0, session);
         
         //Consulta3
         

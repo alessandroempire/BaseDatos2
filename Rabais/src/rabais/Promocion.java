@@ -166,8 +166,9 @@ public class Promocion {
                 ", pagina_web=" + pagina_web + 
                 ", cantidad_disponible=" + cantidad_disponible + 
                 ", puntaje_total=" + puntaje_total + 
-                ", categorias=" + categorias + 
-                ", compraron_usuarios=" + compraron_usuarios + 
-                ", ofertadas=" + ofertadas + '}';
+                //", categorias=" + categorias + 
+                //", compraron_usuarios=" + compraron_usuarios + 
+                //", ofertadas=" + ofertadas.toString() + 
+                '}';
     }    
 }

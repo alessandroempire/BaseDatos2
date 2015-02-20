@@ -73,6 +73,7 @@ public class Categoria {
         this.sub_categorias = sub_categorias;
     }
 
+    /*
     @Override
     public String toString() {
         return "Categoria{" + "nombre=" + nombre + 
@@ -80,4 +81,5 @@ public class Categoria {
                 ", super_categoria=" + super_categoria + 
                 ", sub_categorias=" + sub_categorias + '}';
     }
+    */
 }
