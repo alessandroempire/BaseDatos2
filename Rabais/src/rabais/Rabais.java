@@ -54,13 +54,22 @@ public class Rabais {
                        "and oft.monto_ofertado < :hp" ;
         */
         
-        
+        /*
         String hql = "select p.nombre_promocion " +
                      "from rabais.Promocion as p " +
-                     "join p.ofertadas " +
-                     "with p.ofertadas.monto_ofertado < 100.0";
-                     
-                
+                     "inner join p.ofertadas ";   
+          */
+        /*
+        String hql = "select o.cantidad " +
+                     "from rabais.Oferta as o " +
+                     "inner join o.promocion ";
+                     //"with o.monto_ofertado < 100 ";   
+          */
+        String hql = "select p.nombre_promocion " +
+                     "from rabais.Oferta oft, rabais.Promocion p " + 
+                     "where p.nombre_promocion = oft.promocion.nombre_promocion and "
+                    + "oft.monto_ofertado > 50 " +
+                       "and oft.monto_ofertado < 100" ;
         
         Query q = session.createQuery(hql);
         //q.setParameter("lw", lower_price);
