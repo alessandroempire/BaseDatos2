@@ -92,28 +92,20 @@ public class Rabais {
         
         System.out.println("CONSULTA2");
      
-        String hql = "select f "
+        String hql = "select f.promocion "
                    + "from Oferta f "
-                   + "JOIN fetch f.promocion a "
+                  // + "JOIN f.promocion a "
                    + "where f.monto_ofertado = 80";
         
         Query q = session.createQuery(hql);
         //q.setParameter("lw", lower_price);
         //q.setParameter("hp", high_price);
         
-        //List<Object> list = q.list();
         Iterator i = q.list().iterator();
         
-        //Imprimir el resultado
-        /*
-        for (int i=0; i < list.size(); i++){
-            String info = list.get(i).toString();
-            System.out.println(info);
-        }
-                */
         while(i.hasNext()){
-            Oferta f = (Oferta) i.next();
-            System.out.println(f.getId().toString());
+            Promocion p = (Promocion) i.next();
+            System.out.println(p.getNombre_promocion());
         }
         
     }
@@ -126,7 +118,6 @@ public class Rabais {
      
         String hql = "select distinct c.promocion "
                    + "from Categoria c "
-                   + "INNER JOIN c.promocion "
                    + "where c.nombre = :category";
         
         Query q = session.createQuery(hql);
@@ -261,7 +252,7 @@ public class Rabais {
         //categorias tienen promociones 
         Set setc1 = new HashSet();
         setc1.add(p1);
-        setc1.add(p2);
+        //setc1.add(p2);
         setc1.add(p3);
         c1.setPromocion(setc1);
         
@@ -312,7 +303,7 @@ public class Rabais {
         consulta1("iphone barato", session);
         
         //Consulta2
-        //consulta2(78.0, 100.0, session);
+        consulta2(78.0, 100.0, session);
         
         //Consulta3
         consulta3("electrodomestico", session);
