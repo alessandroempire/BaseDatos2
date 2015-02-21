@@ -35,7 +35,7 @@
       <property column="EMPRESA_DIR_COD_POSTAL" name="codigo_postal" not-null="true"/>
     </component>
     
-    <set name="oferta" table="EMPRESA_OFERTAS" inverse="true" lazy="true" fetch="select">
+    <set name="oferta" table="EMPRESAS_OFERTAS" >
         <key>
             <column name="empresa_id" not-null="false"/>
         </key>

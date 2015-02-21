@@ -13,7 +13,7 @@
         
         <!-- cascade="save-update" declarado en Employee permite realizar el efecto save-update cascade -->
         <!--  Cascade is a convenient feature to save the lines of code needed to manage the state of the other side manually. -->
-        <one-to-one name="employeeDetail" class="org.hibernate.tutorial.domain.EmployeeDetail" cascade="save-update"></one-to-one>
+        <one-to-one name="employeeDetail" class="EmployeeDetail" cascade="save-update"></one-to-one>
          
         <property name="firstname"/>
         <property name="lastname" column="lastname"/>

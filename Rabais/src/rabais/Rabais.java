@@ -42,64 +42,24 @@ public class Rabais {
         return list; 
     }
     
-    
-    //listar las promociones por un rango de precio
-//    public static List consulta2(double lower_price, double high_price, 
-//            Session session){
-//        
-//        System.out.println("CONSULTA2");
-//        
-//        /*
-//        String hql = "select oft.promocion " +
-//                     "from rabais.Oferta oft " + 
-//                     "where oft.monto_ofertado > :lw " +
-//                       "and oft.monto_ofertado < :hp" ;
-//        */
-//        
-//        /*
-//        String hql = "select p.nombre_promocion " +
-//                     "from rabais.Promocion as p " +
-//                     "inner join p.ofertadas ";   
-//          */
-//        /*
-//        String hql = "select o.cantidad " +
-//                     "from rabais.Oferta as o " +
-//                     "inner join o.promocion ";
-//                     //"with o.monto_ofertado < 100 ";   
-//          */
-//        String hql = "select p.nombre_promocion " +
-//                     "from rabais.Oferta oft, rabais.Promocion p " + 
-//                     "where p.nombre_promocion = oft.promocion.nombre_promocion and "
-//                    + "oft.monto_ofertado > 50 " +
-//                       "and oft.monto_ofertado < 100" ;
-//        
-//        Query q = session.createQuery(hql);
-//        //q.setParameter("lw", lower_price);
-//        //q.setParameter("hp", high_price);
-//        
-//        List list = q.list();
-//        
-//        //Imprimir el resultado
-//        for (int i=0; i < list.size(); i++){
-//            String info = list.get(i).toString();
-//            System.out.println(info);
-//        }
-//        
-//        return list; 
-//    }
         public static void consulta2(double lower_price, double high_price, 
             Session session){
         
         System.out.println("CONSULTA2");
      
+        /*
         String hql = "select f.promocion "
                    + "from Oferta f "
-                  // + "JOIN f.promocion a "
-                   + "where f.monto_ofertado = 80";
+                   + "where f.monto_ofertado > :lw and f.monto_ofertado < :hp ";
+        */
+        String hql = "select p "
+                   + "from Promocion p " 
+                   + "join p.ofertadas as offer "
+                   + "where offer.monto_ofertado > :lw and offer.monto_ofertado < :hp ";
         
         Query q = session.createQuery(hql);
-        //q.setParameter("lw", lower_price);
-        //q.setParameter("hp", high_price);
+        q.setParameter("lw", lower_price);
+        q.setParameter("hp", high_price);
         
         Iterator i = q.list().iterator();
         
@@ -211,6 +171,9 @@ public class Rabais {
         Set seto3 = new HashSet();
         seto3.add(o3);
         e3.setOferta(seto3);
+        e3.setOferta(seto2);
+        e3.setOferta(seto1);
+        
             //a cada oferta le agregamos la promocion
         o1.setPromocion(p1);
         o2.setPromocion(p2);

@@ -19,7 +19,7 @@ import java.util.Set;
  * @Descripcion:
  */
 public class Promocion {
-    //private long         id_oferta; 
+    private long         id_oferta; 
     private String       nombre_promocion;
     private String       descripcion_breve;
     private String       descripcion_completa;
@@ -73,7 +73,7 @@ public class Promocion {
     }
 
     //Getters y Setters
-    /*
+    
     public long getId_oferta() {
         return id_oferta;
     }
@@ -81,7 +81,7 @@ public class Promocion {
     public void setId_oferta(long id_oferta) {
         this.id_oferta = id_oferta;
     }
-    */
+    
     
     public String getNombre_promocion() {
         return nombre_promocion;

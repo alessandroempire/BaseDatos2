@@ -10,13 +10,13 @@
          select-before-update="false" 
          table="PROMOCION">
       
-    <!--id name="id_oferta" column="OFERTA_ID"> 
+    <id name="id_oferta" column="OFERTA_ID" type="java.lang.Long"> 
         <generator class="foreign">
-            <param name="property">OFERTA_ID</param>
+            <param name="property">ofertadas</param>
         </generator>
-    </id-->  
+    </id>  
       
-    <id column="PROMOCION_NOMBRE" name="nombre_promocion"/>
+    <property column="PROMOCION_NOMBRE" name="nombre_promocion"/>
     
     <property column="PROMOCION_DESC_BREVE" name="descripcion_breve" not-null="true" />
     
@@ -55,7 +55,7 @@
     </set>
     
     <!-- este one to one le quite el constrained="true" -->
-    <one-to-one name="ofertadas" class="rabais.Oferta" constrained="true"/>
+    <one-to-one name="ofertadas" class="Oferta" />
   
   </class>
 </hibernate-mapping>
