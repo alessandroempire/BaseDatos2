@@ -124,7 +124,7 @@ public class Rabais {
         
         System.out.println("CONSULTA3");
      
-        String hql = "select  c.promocion "
+        String hql = "select distinct c.promocion "
                    + "from Categoria c "
                    + "INNER JOIN c.promocion "
                    + "where c.nombre = :category";
@@ -261,6 +261,8 @@ public class Rabais {
         //categorias tienen promociones 
         Set setc1 = new HashSet();
         setc1.add(p1);
+        setc1.add(p2);
+        setc1.add(p3);
         c1.setPromocion(setc1);
         
         Set setc2 = new HashSet();
