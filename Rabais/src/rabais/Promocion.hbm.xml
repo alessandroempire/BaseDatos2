@@ -10,6 +10,12 @@
          select-before-update="false" 
          table="PROMOCION">
       
+    <!--id name="id_oferta" column="OFERTA_ID"> 
+        <generator class="foreign">
+            <param name="property">OFERTA_ID</param>
+        </generator>
+    </id-->  
+      
     <id column="PROMOCION_NOMBRE" name="nombre_promocion"/>
     
     <property column="PROMOCION_DESC_BREVE" name="descripcion_breve" not-null="true" />
@@ -34,7 +40,7 @@
     
     <property column="PROMOCION_PUNTAJE_TOTAL" name="puntaje_total" not-null="true"/>
     
-    <set name="categorias" table="PROMOCION_LIST_CATEGORIA" inverse="true" lazy="true" fetch="select">
+    <set name="categorias" table="PROMOCION_LIST_CATEGORIA" >
         <key> 
             <column name="promocion_id" not-null="true"/>
         </key>
@@ -49,7 +55,7 @@
     </set>
     
     <!-- este one to one le quite el constrained="true" -->
-    <one-to-one name="ofertadas" class="Oferta" />
+    <one-to-one name="ofertadas" class="rabais.Oferta" constrained="true"/>
   
   </class>
 </hibernate-mapping>

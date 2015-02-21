@@ -28,7 +28,7 @@
           <column name="empresa_id" not-null="true"/>
       </many-to-one>
       
-      <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
+      <one-to-one name="promocion" class="rabais.Promocion" cascade="save-update"/>
       
   </class>
 </hibernate-mapping>

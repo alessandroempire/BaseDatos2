@@ -19,6 +19,7 @@ import java.util.Set;
  * @Descripcion:
  */
 public class Promocion {
+    //private long         id_oferta; 
     private String       nombre_promocion;
     private String       descripcion_breve;
     private String       descripcion_completa;
@@ -27,7 +28,7 @@ public class Promocion {
     private Set<String>  palabras_claves; 
     private Set<String>  pagina_web;
     private int          cantidad_disponible;
-    private double       puntaje_total; 
+    private double       puntaje_total;
     
     //Asociacion posee_categoria
     private Set<Categoria> categorias = new HashSet<Categoria>();
@@ -58,7 +59,30 @@ public class Promocion {
         this.puntaje_total         = puntaje_total;
     }
 
+    public Promocion(String nombre_promocion, String descripcion_breve, String descripcion_completa, String descripcion_adicional, double monto_original, Set<String> palabras_claves, Set<String> pagina_web, int cantidad_disponible, double puntaje_total, Oferta ofertadas) {
+        this.nombre_promocion = nombre_promocion;
+        this.descripcion_breve = descripcion_breve;
+        this.descripcion_completa = descripcion_completa;
+        this.descripcion_adicional = descripcion_adicional;
+        this.monto_original = monto_original;
+        this.palabras_claves = palabras_claves;
+        this.pagina_web = pagina_web;
+        this.cantidad_disponible = cantidad_disponible;
+        this.puntaje_total = puntaje_total;
+        this.ofertadas = ofertadas;
+    }
+
     //Getters y Setters
+    /*
+    public long getId_oferta() {
+        return id_oferta;
+    }
+
+    public void setId_oferta(long id_oferta) {
+        this.id_oferta = id_oferta;
+    }
+    */
+    
     public String getNombre_promocion() {
         return nombre_promocion;
     }

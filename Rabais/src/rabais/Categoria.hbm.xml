@@ -14,9 +14,9 @@
     
     <set name="promocion" table="CATEGORIA_LIST_PROMOCION">
         <key>
-            <column name="promocion_id" not-null="false"/>
+            <column name="categoria_id" not-null="false"/>
         </key>
-        <many-to-many column="categoria_id" class="Promocion" />
+        <many-to-many column="promocion_id" class="Promocion" />
     </set>
     
     <many-to-one name="super_categoria" class="Categoria" column="super_categoria_id" not-null="false"/>

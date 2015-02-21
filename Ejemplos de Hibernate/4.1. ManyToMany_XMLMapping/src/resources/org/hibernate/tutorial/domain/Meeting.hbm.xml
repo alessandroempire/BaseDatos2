@@ -18,7 +18,7 @@
          <key>
             <column name="MEETING_ID" not-null="true"/>
          </key>
-            <many-to-many column="EMPLOYEE_ID" class="org.hibernate.tutorial.domain.Employee"></many-to-many>
+            <many-to-many column="EMPLOYEE_ID" class="Employee"></many-to-many>
         </set>
     </class>
   
