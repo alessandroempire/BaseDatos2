@@ -1,0 +1,72 @@
+Hibernate: alter table CATEGORIA_LIST_PROMOCION drop foreign key FK_30l48y5jlg6lwo3uh53wkilf9
+Hibernate: alter table CATEGORIA_LIST_PROMOCION drop foreign key FK_bbsaix7yddik31p0yvofb0xv1
+Hibernate: alter table CATEGORY drop foreign key FK_p7t1gefebixu8d52ujqg7x5um
+Hibernate: alter table EMPRESA_CORREOS_TABLE drop foreign key FK_mwrkw4rb9qbqypgh7eybbhrjo
+Hibernate: alter table EMPRESA_TLF_TABLE drop foreign key FK_tadatdh4f34s9dx7bmhrm7q6a
+Hibernate: alter table OFERTA drop foreign key FK_f7onirb4dn62ytktrsikwn2w
+Hibernate: alter table OFERTADO_FECHAS_VIGENTE_LIST drop foreign key FK_t86gtqytmtbcyy4u2oey766j0
+Hibernate: alter table PROMOCION_LIST_CATEGORIA drop foreign key FK_dprht655k3sy8mfq7gla30j8s
+Hibernate: alter table PROMOCION_LIST_CATEGORIA drop foreign key FK_n1994rua56dn4tko6tagrkq0n
+Hibernate: alter table PROMOCION_LIST_USUARIOS drop foreign key FK_5w8tn7hmm8dts7v8mgf6psf2b
+Hibernate: alter table PROMOCION_LIST_USUARIOS drop foreign key FK_qtsjtsv1ao7hp29qf1tdmdkid
+Hibernate: alter table PROMOCION_PAG_WEB_TABLE drop foreign key FK_b4opydt8pnibhnx6bdckwd46i
+Hibernate: alter table PROMOCION_PALABRA_CLAVE_TABLE drop foreign key FK_f8np9nsi3yms6suugn5b9txv6
+Hibernate: alter table TARJETA_CREDITO drop foreign key FK_ctua0r8ys0fd1x2tlvmjxbb5b
+Hibernate: alter table USER_AMIGOS drop foreign key FK_3bfn9vt1tkabh5cp5qnose16o
+Hibernate: alter table USER_AMIGOS drop foreign key FK_sfqicxj2lh6m7aenyhffpdxhi
+Hibernate: alter table USER_COMPRA_PROMOCIONES drop foreign key FK_1le2xtd2apwuutpbut0nkaa0s
+Hibernate: alter table USER_COMPRA_PROMOCIONES drop foreign key FK_f3mb4g5p2ek3iqmugi8mv7do
+Hibernate: alter table USER_EMAIL_TABLE drop foreign key FK_bp2lfm9omx2ip9ny7ge9c08ih
+Hibernate: drop table if exists CATEGORIA_LIST_PROMOCION
+Hibernate: drop table if exists CATEGORY
+Hibernate: drop table if exists EMPRESA
+Hibernate: drop table if exists EMPRESA_CORREOS_TABLE
+Hibernate: drop table if exists EMPRESA_TLF_TABLE
+Hibernate: drop table if exists OFERTA
+Hibernate: drop table if exists OFERTADO_FECHAS_VIGENTE_LIST
+Hibernate: drop table if exists PROMOCION
+Hibernate: drop table if exists PROMOCION_LIST_CATEGORIA
+Hibernate: drop table if exists PROMOCION_LIST_USUARIOS
+Hibernate: drop table if exists PROMOCION_PAG_WEB_TABLE
+Hibernate: drop table if exists PROMOCION_PALABRA_CLAVE_TABLE
+Hibernate: drop table if exists TARJETA_CREDITO
+Hibernate: drop table if exists USER_AMIGOS
+Hibernate: drop table if exists USER_COMPRA_PROMOCIONES
+Hibernate: drop table if exists USER_EMAIL_TABLE
+Hibernate: drop table if exists USUARIO
+Hibernate: create table CATEGORIA_LIST_PROMOCION (categoria_id varchar(255), promocion_id bigint not null, primary key (categoria_id, promocion_id))
+Hibernate: create table CATEGORY (CATEGORIA_NOMBRE varchar(255) not null, super_categoria_id varchar(255), primary key (CATEGORIA_NOMBRE))
+Hibernate: create table EMPRESA (EMPRESA_NOMBRE varchar(255) not null, EMPRESA_RAZON_S longtext, EMPRESA_NUM_CLIENTES integer, EMPRESA_DIR_CALLE varchar(255) not null, EMPRESA_DIR_URB varchar(255) not null, EMPRESA_DIR_NOMBRE varchar(255), EMPRESA_DIR_NUM integer, EMPRESA_DIR_COD_POSTAL varchar(255) not null, primary key (EMPRESA_NOMBRE))
+Hibernate: create table EMPRESA_CORREOS_TABLE (EMPRESA_NOMBRE varchar(255) not null, EMPRESA_CORREO varchar(40) not null, primary key (EMPRESA_NOMBRE, EMPRESA_CORREO))
+Hibernate: create table EMPRESA_TLF_TABLE (EMPRESA_NOMBRE varchar(255) not null, EMPRESA_TLF varchar(255) not null, primary key (EMPRESA_NOMBRE, EMPRESA_TLF))
+Hibernate: create table OFERTA (OFERTA_ID bigint not null auto_increment, OFERTA_FECHA_PUBLICACION date, OFERTA_CANTIDAD integer, OFERTA_MONTO_OFERTADO double precision, OFERTA_PORCENTAJE_DESCUENTO integer, empresa_id varchar(255) not null, primary key (OFERTA_ID))
+Hibernate: create table OFERTADO_FECHAS_VIGENTE_LIST (OFERTA_ID bigint not null, OFERTA_FECHA_VIGENCIA date not null, primary key (OFERTA_ID, OFERTA_FECHA_VIGENCIA))
+Hibernate: create table PROMOCION (OFERTA_ID bigint not null, PROMOCION_NOMBRE varchar(255), PROMOCION_DESC_BREVE varchar(200) not null, PROMOCION_DESC_COMPLETA varchar(255) not null, PROMOCION_DESC_ADICIONAL varchar(255), PROMOCION_MONTO_ORIGINAL double precision not null, PROMOCION_CANT_DISPONIBLE integer not null, PROMOCION_PUNTAJE_TOTAL double precision not null, primary key (OFERTA_ID))
+Hibernate: create table PROMOCION_LIST_CATEGORIA (promocion_id bigint not null, categoria_id varchar(255) not null, primary key (promocion_id, categoria_id))
+Hibernate: create table PROMOCION_LIST_USUARIOS (promocion_id bigint, usuario_id varchar(255) not null, primary key (promocion_id, usuario_id))
+Hibernate: create table PROMOCION_PAG_WEB_TABLE (PROMOCION_NOMBRE bigint not null, PROMOCION_PAGINA_WEB varchar(255))
+Hibernate: create table PROMOCION_PALABRA_CLAVE_TABLE (PROMOCION_NOMBRE bigint not null, PROMOCION_PALABRA_CLAVE varchar(255))
+Hibernate: create table TARJETA_CREDITO (CREDIT_NUMERO varchar(255) not null, CREDIT_TARJETAHABIENTE varchar(255) not null, CREDIT_TIPO varchar(255) not null, usuario_id varchar(255) not null, primary key (CREDIT_NUMERO))
+Hibernate: create table USER_AMIGOS (tiene_amigo_id varchar(255) not null, es_amigo_id varchar(255) not null, primary key (es_amigo_id, tiene_amigo_id))
+Hibernate: create table USER_COMPRA_PROMOCIONES (usuario_id varchar(255), promocion_id bigint not null, primary key (usuario_id, promocion_id))
+Hibernate: create table USER_EMAIL_TABLE (USER_LOGIN varchar(255) not null, USER_EMAIL varchar(255) not null, primary key (USER_LOGIN, USER_EMAIL))
+Hibernate: create table USUARIO (USER_LOGIN varchar(255) not null, USER_PASSWORD varchar(255) not null, USER_NAME varchar(255), USER_LAST_NAME varchar(255), USER_BIRTH_DATE date not null, USER_PROMOTIONAL_MONEY integer not null, USER_LATITUDE_DEGREE integer, USER_LATITUDE_MINUTES integer, USER_LATITUDE_SECONDS integer, USER_LONGITUDE_DEGREE integer, USER_LONGITUDE_MINUTES integer, USER_LONGITUDE_SECONDS integer, primary key (USER_LOGIN))
+Hibernate: alter table CATEGORIA_LIST_PROMOCION add constraint FK_30l48y5jlg6lwo3uh53wkilf9 foreign key (promocion_id) references PROMOCION (OFERTA_ID)
+Hibernate: alter table CATEGORIA_LIST_PROMOCION add constraint FK_bbsaix7yddik31p0yvofb0xv1 foreign key (categoria_id) references CATEGORY (CATEGORIA_NOMBRE)
+Hibernate: alter table CATEGORY add constraint FK_p7t1gefebixu8d52ujqg7x5um foreign key (super_categoria_id) references CATEGORY (CATEGORIA_NOMBRE)
+Hibernate: alter table EMPRESA_CORREOS_TABLE add constraint FK_mwrkw4rb9qbqypgh7eybbhrjo foreign key (EMPRESA_NOMBRE) references EMPRESA (EMPRESA_NOMBRE)
+Hibernate: alter table EMPRESA_TLF_TABLE add constraint FK_tadatdh4f34s9dx7bmhrm7q6a foreign key (EMPRESA_NOMBRE) references EMPRESA (EMPRESA_NOMBRE)
+Hibernate: alter table OFERTA add constraint FK_f7onirb4dn62ytktrsikwn2w foreign key (empresa_id) references EMPRESA (EMPRESA_NOMBRE)
+Hibernate: alter table OFERTADO_FECHAS_VIGENTE_LIST add constraint FK_t86gtqytmtbcyy4u2oey766j0 foreign key (OFERTA_ID) references OFERTA (OFERTA_ID)
+Hibernate: alter table PROMOCION_LIST_CATEGORIA add constraint FK_dprht655k3sy8mfq7gla30j8s foreign key (categoria_id) references CATEGORY (CATEGORIA_NOMBRE)
+Hibernate: alter table PROMOCION_LIST_CATEGORIA add constraint FK_n1994rua56dn4tko6tagrkq0n foreign key (promocion_id) references PROMOCION (OFERTA_ID)
+Hibernate: alter table PROMOCION_LIST_USUARIOS add constraint FK_5w8tn7hmm8dts7v8mgf6psf2b foreign key (usuario_id) references USUARIO (USER_LOGIN)
+Hibernate: alter table PROMOCION_LIST_USUARIOS add constraint FK_qtsjtsv1ao7hp29qf1tdmdkid foreign key (promocion_id) references PROMOCION (OFERTA_ID)
+Hibernate: alter table PROMOCION_PAG_WEB_TABLE add constraint FK_b4opydt8pnibhnx6bdckwd46i foreign key (PROMOCION_NOMBRE) references PROMOCION (OFERTA_ID)
+Hibernate: alter table PROMOCION_PALABRA_CLAVE_TABLE add constraint FK_f8np9nsi3yms6suugn5b9txv6 foreign key (PROMOCION_NOMBRE) references PROMOCION (OFERTA_ID)
+Hibernate: alter table TARJETA_CREDITO add constraint FK_ctua0r8ys0fd1x2tlvmjxbb5b foreign key (usuario_id) references USUARIO (USER_LOGIN)
+Hibernate: alter table USER_AMIGOS add constraint FK_3bfn9vt1tkabh5cp5qnose16o foreign key (es_amigo_id) references USUARIO (USER_LOGIN)
+Hibernate: alter table USER_AMIGOS add constraint FK_sfqicxj2lh6m7aenyhffpdxhi foreign key (tiene_amigo_id) references USUARIO (USER_LOGIN)
+Hibernate: alter table USER_COMPRA_PROMOCIONES add constraint FK_1le2xtd2apwuutpbut0nkaa0s foreign key (promocion_id) references PROMOCION (OFERTA_ID)
+Hibernate: alter table USER_COMPRA_PROMOCIONES add constraint FK_f3mb4g5p2ek3iqmugi8mv7do foreign key (usuario_id) references USUARIO (USER_LOGIN)
+Hibernate: alter table USER_EMAIL_TABLE add constraint FK_bp2lfm9omx2ip9ny7ge9c08ih foreign key (USER_LOGIN) references USUARIO (USER_LOGIN)

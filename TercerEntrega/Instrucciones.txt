@@ -1,0 +1,25 @@
+1) crear usuario en mysql llamado:
+alessandro
+Ejecutar
+mysql -h localhost -u root -p 
+Colocar clave como root
+
+luego ejecutar
+
+create user 'alessandro'@'locahost' IDENTIFIED by 'alcpass'
+
+Salir de session mysql como root. 
+
+3) acceder a mysql a traves de
+mysql -h localhost -u alessandro -p
+
+al solicitar el password colocar: alcpass
+
+4) ejecutar comando:
+create database rabais;
+
+use rabais;
+
+--correr el proyecto en NETBEANS
+
+show tables; 

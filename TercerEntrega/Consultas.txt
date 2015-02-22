@@ -1,0 +1,14 @@
+CONSULTA1
+Hibernate: select promocion0_.OFERTA_ID as OFERTA_I1_7_, promocion0_.PROMOCION_NOMBRE as PROMOCIO2_7_, promocion0_.PROMOCION_DESC_BREVE as PROMOCIO3_7_, promocion0_.PROMOCION_DESC_COMPLETA as PROMOCIO4_7_, promocion0_.PROMOCION_DESC_ADICIONAL as PROMOCIO5_7_, promocion0_.PROMOCION_MONTO_ORIGINAL as PROMOCIO6_7_, promocion0_.PROMOCION_CANT_DISPONIBLE as PROMOCIO7_7_, promocion0_.PROMOCION_PUNTAJE_TOTAL as PROMOCIO8_7_ from PROMOCION promocion0_ where promocion0_.PROMOCION_NOMBRE=?
+Promocion{nombre_promocion=depilado, descripcion_breve=des breve, descripcion_completa=des comple, descripcion_adicional=desp adicional, monto_original=10.2, palabras_claves=[depilado], pagina_web=[www.waxof.com], cantidad_disponible=12, puntaje_total=4.0}
+CONSULTA1
+Hibernate: select promocion0_.OFERTA_ID as OFERTA_I1_7_, promocion0_.PROMOCION_NOMBRE as PROMOCIO2_7_, promocion0_.PROMOCION_DESC_BREVE as PROMOCIO3_7_, promocion0_.PROMOCION_DESC_COMPLETA as PROMOCIO4_7_, promocion0_.PROMOCION_DESC_ADICIONAL as PROMOCIO5_7_, promocion0_.PROMOCION_MONTO_ORIGINAL as PROMOCIO6_7_, promocion0_.PROMOCION_CANT_DISPONIBLE as PROMOCIO7_7_, promocion0_.PROMOCION_PUNTAJE_TOTAL as PROMOCIO8_7_ from PROMOCION promocion0_ where promocion0_.PROMOCION_NOMBRE=?
+Promocion{nombre_promocion=iphone barato, descripcion_breve=des breve, descripcion_completa=des comple, descripcion_adicional=desp adicional, monto_original=10.2, palabras_claves=[iphone], pagina_web=[www apple.com], cantidad_disponible=100, puntaje_total=4.2}
+CONSULTA2
+Hibernate: select promocion0_.OFERTA_ID as OFERTA_I1_7_, promocion0_.PROMOCION_NOMBRE as PROMOCIO2_7_, promocion0_.PROMOCION_DESC_BREVE as PROMOCIO3_7_, promocion0_.PROMOCION_DESC_COMPLETA as PROMOCIO4_7_, promocion0_.PROMOCION_DESC_ADICIONAL as PROMOCIO5_7_, promocion0_.PROMOCION_MONTO_ORIGINAL as PROMOCIO6_7_, promocion0_.PROMOCION_CANT_DISPONIBLE as PROMOCIO7_7_, promocion0_.PROMOCION_PUNTAJE_TOTAL as PROMOCIO8_7_ from PROMOCION promocion0_ inner join OFERTA oferta1_ on promocion0_.OFERTA_ID=oferta1_.OFERTA_ID where oferta1_.OFERTA_MONTO_OFERTADO>? and oferta1_.OFERTA_MONTO_OFERTADO<?
+depilado
+iphone barato
+CONSULTA3
+Hibernate: select distinct promocion2_.OFERTA_ID as OFERTA_I1_7_, promocion2_.PROMOCION_NOMBRE as PROMOCIO2_7_, promocion2_.PROMOCION_DESC_BREVE as PROMOCIO3_7_, promocion2_.PROMOCION_DESC_COMPLETA as PROMOCIO4_7_, promocion2_.PROMOCION_DESC_ADICIONAL as PROMOCIO5_7_, promocion2_.PROMOCION_MONTO_ORIGINAL as PROMOCIO6_7_, promocion2_.PROMOCION_CANT_DISPONIBLE as PROMOCIO7_7_, promocion2_.PROMOCION_PUNTAJE_TOTAL as PROMOCIO8_7_ from CATEGORY categoria0_ inner join CATEGORIA_LIST_PROMOCION promocion1_ on categoria0_.CATEGORIA_NOMBRE=promocion1_.categoria_id inner join PROMOCION promocion2_ on promocion1_.promocion_id=promocion2_.OFERTA_ID where categoria0_.CATEGORIA_NOMBRE=?
+depilado
+pizzas ricas
