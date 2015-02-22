@@ -13,7 +13,9 @@
       
     <id column="EMPRESA_NOMBRE" name="nombre"/>
     
-    <property column="EMPRESA_RAZON_S" name="razon_social"/>
+    
+     
+    <property column="EMPRESA_RAZON_S" name="razon_social" length="300"/>
     
     <set name="telefonos" table="EMPRESA_TLF_TABLE">
       <key column="EMPRESA_NOMBRE"/>
@@ -22,7 +24,7 @@
     
     <set name="correos" table="EMPRESA_CORREOS_TABLE">
       <key column="EMPRESA_NOMBRE"/>
-      <element column="EMPRESA_CORREO" type="string" not-null="true"/>
+      <element column="EMPRESA_CORREO" type="string" not-null="true" length="40"/>
     </set>
     
     <property column="EMPRESA_NUM_CLIENTES" name="numero_clientes"/>

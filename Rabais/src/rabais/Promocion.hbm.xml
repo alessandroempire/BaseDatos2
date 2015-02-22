@@ -18,7 +18,7 @@
       
     <property column="PROMOCION_NOMBRE" name="nombre_promocion"/>
     
-    <property column="PROMOCION_DESC_BREVE" name="descripcion_breve" not-null="true" />
+    <property column="PROMOCION_DESC_BREVE" name="descripcion_breve" not-null="true" length="200" />
     
     <property column="PROMOCION_DESC_COMPLETA" name="descripcion_completa" not-null="true"/>
     
