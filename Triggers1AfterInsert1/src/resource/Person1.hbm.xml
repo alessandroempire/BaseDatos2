@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+    <hibernate-mapping package="paquete">
+
+    <class name="Person1" table="PERSON1">
+        <id column="id1" name="id1">
+            <generator class="native"/>
+        </id>
+  
+    </class>
+    <database-object>
+        <create>       
+      	CREATE TRIGGER proof AFTER INSERT ON PERSON1
+		FOR EACH ROW BEGIN
+		INSERT INTO PERSON2 SET id2 = NEW.id1;
+		END;
+        </create>
+        <drop>
+        drop trigger proof;
+        </drop>
+        <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
+    </database-object>
+</hibernate-mapping>

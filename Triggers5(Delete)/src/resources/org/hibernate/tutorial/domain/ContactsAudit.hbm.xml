@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+ 
+    <class name="ContactsAudit" table="CONTACTS_AUDIT">
+        <id name="contactId" column="CONTACT_ID">
+            <generator class="native">
+        </generator></id>
+ 
+        <property name="deletedDate" column="DELETED_DATE"/>
+        <property name="deletedBy" column="DELETED_BY"/>  
+
+     </class>
+    
+</hibernate-mapping>

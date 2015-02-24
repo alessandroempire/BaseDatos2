@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+    <hibernate-mapping package="paquete">
+
+    <class name="Person1" table="PERSON1">
+        <id column="id1" name="id1">
+            <generator class="native"/>
+        </id>
+        <property name="first_name1" column="FIRST_NAME1"/>
+        <property name="last_name1" column="LAST_NAME1" />
+
+    </class>
+    <database-object>
+        <create>       
+      	CREATE TRIGGER prueba AFTER INSERT ON PERSON1
+		FOR EACH ROW BEGIN
+		INSERT INTO PERSON2 SET id2 = NEW.id1, FIRST_NAME2 = NEW.FIRST_NAME1, LAST_NAME2 = NEW.LAST_NAME1;
+		END;
+        </create>
+        <drop>
+        drop trigger prueba;
+        </drop>
+        <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
+    </database-object>
+</hibernate-mapping>

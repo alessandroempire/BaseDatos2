@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+ 
+    <class name="Contacts" table="CONTACTS">
+        <id name="contactId" column="CONTACT_ID">
+            <generator class="native"></generator>
+        </id>
+         
+        <property name="firstName" column="FIRSTNAME"/>
+        <property name="lastName" column="LASTNAME"/>
+        <property name="birthday" column="BIRTHDAY"/>
+        <property name="createdDate" column="CREATED_DATE"/>
+        <property name="createdBy" column="CREATED_BY"/>   
+    </class>
+    
+    
+    <database-object>
+        <create>   
+        <!-- Este trigger lo que hace es que una vez que se elimine de contacts, entonces se almacena
+        en una nueva tabla contacts_audit el id, la fecha de eliminación y por quien fue eliminado -->   
+        CREATE TRIGGER contacts_before_delete
+		BEFORE DELETE
+   		ON CONTACTS FOR EACH ROW 
+		BEGIN
+
+   		DECLARE vUser varchar(50);
+
+   		SELECT USER() INTO vUser;
+   
+		INSERT INTO CONTACTS_AUDIT(CONTACT_ID, DELETED_DATE, DELETED_BY)
+		VALUES(OLD.CONTACT_ID, SYSDATE(), vUser);
+		
+		END;
+        </create>
+        <drop>
+        drop trigger contacts_before_delete;
+        </drop>
+        <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
+     </database-object>
+</hibernate-mapping>
