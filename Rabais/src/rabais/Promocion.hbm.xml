@@ -57,5 +57,7 @@
     <!-- este one to one le quite el constrained="true" -->
     <one-to-one name="ofertadas" class="Oferta" />
   
+    <one-to-one name="comprado_por" class="Compra" />
+    
   </class>
 </hibernate-mapping>

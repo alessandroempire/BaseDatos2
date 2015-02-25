@@ -63,12 +63,11 @@
       <set name="es_amigo" table="USER_AMIGOS" cascade="none" lazy="false">
           <key column="es_amigo_id"/>
           <many-to-many column="tiene_amigo_id" class="Usuario"/>
-      </set>   
-      
+      </set>         
           
       <set name="compra" table="USUARIO_COMPRAS" >
           <key> 
-              <column name="usuarioc_id" not-null="true"/>
+              <column name="usuario_compra_id" not-null="false"/>
           </key>
           <many-to-many column="compra_id" class="Compra"/>
       </set>

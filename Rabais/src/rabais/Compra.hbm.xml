@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
+<hibernate-mapping package="rabais">
   <class dynamic-insert="false" 
          dynamic-update="false" 
          mutable="true" 
@@ -20,11 +20,10 @@
         <key> 
             <column name="compra_id" not-null="true"/>
         </key>
-        <many-to-many column="usuarioc_id" class="Usuario"/>
+        <many-to-many column="usuario_compra_id" class="Usuario"/>
       </set>
       
       <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
-
       
   </class>
 </hibernate-mapping>

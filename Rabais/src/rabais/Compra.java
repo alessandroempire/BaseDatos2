@@ -20,7 +20,7 @@ public class Compra {
     private long id;
     private int cantidad;
     //asociacion con usuario
-    Set<Usuario> compradores = new HashSet();
+    Set<Usuario> compradores = new HashSet<Usuario>();
     //asociaion con promocion
     Promocion promocion;
 
@@ -29,8 +29,7 @@ public class Compra {
     }
     
     //contructor
-    public Compra(long id, int cantidad, Promocion promocion) {
-        this.id = id;
+    public Compra(int cantidad, Promocion promocion) {
         this.cantidad = cantidad;
         this.promocion = promocion;
     }

@@ -227,6 +227,48 @@ public class Rabais {
         setc3.add(p3);
         c3.setPromocion(setc3);
         
+        //Compra
+        Compra compra1 = new Compra(1, p1);
+        Compra compra2 = new Compra(1, p2);
+        Compra compra3 = new Compra(1, p3);
+        
+        //Hacer los sets correctos
+            //de usuario a compra
+        Set setcom1 = new HashSet();
+        setcom1.add(compra1);
+        u1.setCompra(setcom1);
+        
+        Set setcom2 = new HashSet();
+        setcom2.add(compra2);
+        u2.setCompra(setcom2);
+        
+        Set setcom3 = new HashSet();
+        setcom3.add(compra3);
+        u3.setCompra(setcom3);
+        
+            //de compra a usuario
+        Set usercom1 = new HashSet();
+        usercom1.add(u1);
+        compra1.setCompradores(usercom1);
+        
+        Set usercom2 = new HashSet();
+        usercom2.add(u2);
+        compra2.setCompradores(usercom2);
+        
+        Set usercom3 = new HashSet();
+        usercom3.add(u3);
+        compra3.setCompradores(usercom3);
+        
+            //de compra a promocion
+        compra1.setPromocion(p1);
+        compra2.setPromocion(p2);
+        compra3.setPromocion(p3);
+        
+            //de promocion a compra
+        p1.setComprado_por(compra1);
+        p2.setComprado_por(compra2);
+        p3.setComprado_por(compra3);
+        
         @SuppressWarnings("deprecation")
         //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();
@@ -258,6 +300,10 @@ public class Rabais {
         session.save(p1);
         session.save(p2);
         session.save(p3);
+        
+        session.save(compra1);
+        session.save(compra2);
+        session.save(compra3);
        
         session.getTransaction().commit();
         
