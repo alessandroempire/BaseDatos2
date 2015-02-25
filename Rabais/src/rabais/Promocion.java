@@ -36,6 +36,8 @@ public class Promocion {
     private Set<Usuario> compraron_usuarios = new HashSet<Usuario>();
     //Asociacion Oferta
     private Oferta ofertadas;
+    //Asociacion compra con clase asociacion
+    private Compra comprado_por; 
     
     //Constructor
     public Promocion(){}
@@ -177,6 +179,14 @@ public class Promocion {
 
     public void setOfertadas(Oferta ofertadas) {
         this.ofertadas = ofertadas;
+    }
+
+    public Compra getComprado_por() {
+        return comprado_por;
+    }
+
+    public void setComprado_por(Compra comprado_por) {
+        this.comprado_por = comprado_por;
     }
 
     @Override

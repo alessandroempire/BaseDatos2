@@ -36,6 +36,8 @@ public class Usuario {
     //Asociacion posee_amigo (self join)
     private Set<Usuario> tiene_amigo = new HashSet<Usuario>();
     private Set<Usuario> es_amigo = new HashSet<Usuario>();
+    //Asocicacion compra con clase asociacion
+    private Set<Compra> compra = new HashSet();
     
     //Constructor
     public Usuario(){}
@@ -150,6 +152,14 @@ public class Usuario {
         this.es_amigo = es_amigo;
     }
 
+    public Set<Compra> getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Set<Compra> compra) {
+        this.compra = compra;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" + "login=" + login + 
@@ -161,8 +171,9 @@ public class Usuario {
                 ", promotional_money=" + promotional_money + 
                 ", coordinates=" + coordinates + 
                 ", tarjetas=" + tarjetas + 
-                ", promociones_compradas=" + promociones_compradas + 
-                ", tiene_amigo=" + tiene_amigo + 
-                ", es_amigo=" + es_amigo + '}';
+                //", promociones_compradas=" + promociones_compradas + 
+                //", tiene_amigo=" + tiene_amigo + 
+                //", es_amigo=" + es_amigo + 
+                '}';
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class dynamic-insert="false" 
+         dynamic-update="false" 
+         mutable="true" 
+         name="rabais.Compra" 
+         table="COMPRA"
+         optimistic-lock="version" 
+         polymorphism="implicit" 
+         select-before-update="false">
+      
+      <id name="id" column="COMPRA">
+          <generator class="native"/>
+      </id>
+      
+      <property name="cantidad" column="CANTIDAD" />
+     
+      <set name="compradores" table="COMPRADORES_USUARIOS" >
+        <key> 
+            <column name="compra_id" not-null="true"/>
+        </key>
+        <many-to-many column="usuarioc_id" class="Usuario"/>
+      </set>
+      
+      <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
+
+      
+  </class>
+</hibernate-mapping>

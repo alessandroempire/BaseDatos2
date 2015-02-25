@@ -64,6 +64,15 @@
           <key column="es_amigo_id"/>
           <many-to-many column="tiene_amigo_id" class="Usuario"/>
       </set>   
+      
+          
+      <set name="compra" table="USUARIO_COMPRAS" >
+          <key> 
+              <column name="usuarioc_id" not-null="true"/>
+          </key>
+          <many-to-many column="compra_id" class="Compra"/>
+      </set>
+
          
   </class>
 </hibernate-mapping>
