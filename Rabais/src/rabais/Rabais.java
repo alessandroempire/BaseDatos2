@@ -158,6 +158,11 @@ public class Rabais {
                 "desp adicional", 10.2, "pizza", "www.romanina.com", 
                 500, 5);
         
+        //sett el status
+        p1.setEstatus("habilitado");
+        p2.setEstatus("habilitado");
+        p3.setEstatus("habilitado");
+        
         //Clase asosiacion oferta
             //a cada empresa le agregamos una oferta (puede ser null)
         Set seto1 = new HashSet();

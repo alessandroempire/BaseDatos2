@@ -29,6 +29,7 @@ public class Promocion {
     private Set<String>  pagina_web;
     private int          cantidad_disponible;
     private double       puntaje_total;
+    private String       estatus; 
     
     //Asociacion posee_categoria
     private Set<Categoria> categorias = new HashSet<Categoria>();
@@ -155,6 +156,14 @@ public class Promocion {
 
     public void setPuntaje_total(double puntaje_total) {
         this.puntaje_total = puntaje_total;
+    }
+
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
     }
 
     public Set<Categoria> getCategorias() {

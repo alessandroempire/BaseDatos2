@@ -40,6 +40,8 @@
     
     <property column="PROMOCION_PUNTAJE_TOTAL" name="puntaje_total" not-null="true"/>
     
+    <property column="STATUS" name="estatus" not-null="true" />
+    
     <set name="categorias" table="PROMOCION_LIST_CATEGORIA" >
         <key> 
             <column name="promocion_id" not-null="true"/>

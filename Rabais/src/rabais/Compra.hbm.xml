@@ -25,33 +25,19 @@
       
       <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
       
-      <database-object>
+      <!--database-object>
           <create>
-              
+                CREATE TRIGGER actualizar_cantidad
+                    AFTER UPDATE ON OFERTA
+                    BEGIN
+                        UPDATE OFERTA SET cantidad = 
+                    END;
           </create>
           <drop>
-              
+              drop trigger actualizar_cantidad; 
           </drop>
           <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
-      </database-object>
-      
-      <database-object>
-        <create>      
-        <!-- Este trigger le actualiza el salario en 100 a Nina cuando se hace alguna actualización 
-             del dpto -->
-	    CREATE TRIGGER actualizar_salario
-		AFTER UPDATE ON DEPARTMENT
-		FOR EACH ROW
-		BEGIN
-		   UPDATE EMPLOYEE SET salary = 100 where firstname = "Nina"; 
-		END;
-        </create>
-        <drop>
-        drop trigger actualizar_salario;
-        </drop>
-        <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
-     </database-object>
-
+      </database-object-->
       
   </class>
 </hibernate-mapping>
