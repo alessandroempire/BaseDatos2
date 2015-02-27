@@ -36,4 +36,5 @@
         </drop>
         <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
      </database-object>
+     
 </hibernate-mapping>

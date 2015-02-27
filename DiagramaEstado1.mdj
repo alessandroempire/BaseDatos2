@@ -620,7 +620,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "entry/Hacer visible la promocion en el portal",
+											"text": "entry/Colocar Estatus como 'Habilitado",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -884,7 +884,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "entry/Dehabilitar la opcion de compra de la promocion",
+											"text": "entry/Cambiar a estatus 'Deshabilitado'",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -913,7 +913,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "exit/Habilitar la opcion de compra de la promocion",
+											"text": "exit/Cambiar a estado 'Habilitado'",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -1804,7 +1804,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFLvG/4I4L2uow="
 									},
-									"name": "Hacer visible la promocion en el portal",
+									"name": "Colocar Estatus como 'Habilitado",
 									"visibility": "public",
 									"isReentrant": true
 								}
@@ -1825,7 +1825,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFLvHAvSYMZ6sg="
 									},
-									"name": "Dehabilitar la opcion de compra de la promocion",
+									"name": "Cambiar a estatus 'Deshabilitado'",
 									"visibility": "public",
 									"isReentrant": true,
 									"isReadOnly": false,
@@ -1839,7 +1839,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFLvHAvSYMZ6sg="
 									},
-									"name": "Habilitar la opcion de compra de la promocion",
+									"name": "Cambiar a estado 'Habilitado'",
 									"visibility": "public",
 									"isReentrant": true,
 									"isReadOnly": false,

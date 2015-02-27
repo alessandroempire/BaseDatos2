@@ -33,7 +33,7 @@
         
         <!-- Mention here all the model classes along with their package name -->
         <mapping resource="resources/org/hibernate/tutorial/domain/Employee.hbm.xml"/>
-		<mapping resource="resources/org/hibernate/tutorial/domain/Department.hbm.xml"/>
+	<mapping resource="resources/org/hibernate/tutorial/domain/Department.hbm.xml"/>
 
     </session-factory>
 
