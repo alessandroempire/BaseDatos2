@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-    <hibernate-mapping package="paquete">
+    <hibernate-mapping >
 
     <class name="Person1" table="PERSON1">
         <id column="id1" name="id1">
@@ -14,9 +14,11 @@
     </class>
     <database-object>
         <create>       
-      	CREATE TRIGGER prueba AFTER INSERT ON PERSON1
-		FOR EACH ROW BEGIN
-		INSERT INTO PERSON2 SET id2 = NEW.id1, FIRST_NAME2 = NEW.FIRST_NAME1, LAST_NAME2 = NEW.LAST_NAME1;
+      	CREATE TRIGGER prueba 
+            AFTER INSERT ON PERSON1
+		FOR EACH ROW 
+            BEGIN
+                    INSERT INTO PERSON2 SET id2 = NEW.id1, FIRST_NAME2 = NEW.FIRST_NAME1, LAST_NAME2 = NEW.LAST_NAME1;
 		END;
         </create>
         <drop>

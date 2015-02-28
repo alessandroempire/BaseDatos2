@@ -1,4 +1,4 @@
-package org.hibernate.tutorial.domain;
+
 import java.util.Set;
 
 public class Department {

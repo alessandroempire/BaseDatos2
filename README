@@ -30,3 +30,5 @@ Las 3 consultas propuestas a implementar:
 3) Dado el nombre de una categoria, listar todas las promociones que pertenecen a esa categoria. 
 
 Los triggers a implementar son
+1) Cuando esta habilitada la promocion
+2) Cuando se realiza una compra, disminuir la cantidad disponible.

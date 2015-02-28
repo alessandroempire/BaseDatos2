@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="org.hibernate.tutorial.domain">
+<hibernate-mapping >
   <class name="Department" table="DEPARTMENT">
     <id column="DEPARTMENT_ID" name="departmentId">
       <generator class="native"/>
@@ -13,20 +13,4 @@
       <one-to-many class="Employee"/>
     </set>
   </class>
-  <database-object>
-    <create>      
-        <!-- Este trigger le actualiza el salario en 100 a Nina cuando se hace alguna actualización 
-             del dpto -->
-	    CREATE TRIGGER actualizar_salario
-		AFTER UPDATE ON DEPARTMENT
-		FOR EACH ROW
-		BEGIN
-		   UPDATE EMPLOYEE SET salary = 100 where firstname = "Nina"; 
-		END;
-        </create>
-    <drop>
-        drop trigger actualizar_salario;
-        </drop>
-    <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
-  </database-object>
 </hibernate-mapping>

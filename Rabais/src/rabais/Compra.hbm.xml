@@ -25,19 +25,23 @@
       
       <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
       
-      <!--database-object>
-          <create>
-                CREATE TRIGGER actualizar_cantidad
-                    AFTER UPDATE ON OFERTA
-                    BEGIN
-                        UPDATE OFERTA SET cantidad = 
-                    END;
-          </create>
-          <drop>
-              drop trigger actualizar_cantidad; 
-          </drop>
-          <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
-      </database-object-->
-      
   </class>
+      
+    <database-object>
+        <create>
+              CREATE TRIGGER actualizar_cantidad
+                  AFTER INSERT ON COMPRA
+                  FOR EACH ROW
+                  BEGIN
+                      UPDATE PROMOCION
+                      SET PROMOCION_DESC_BREVE = "PRUEBAAA"
+                  END;
+        </create>
+        <drop>
+            drop trigger actualizar_cantidad; 
+        </drop>
+        <dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
+        
+    </database-object>
+  
 </hibernate-mapping>

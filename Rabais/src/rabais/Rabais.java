@@ -275,7 +275,6 @@ public class Rabais {
         p3.setComprado_por(compra3);
         
         @SuppressWarnings("deprecation")
-        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();

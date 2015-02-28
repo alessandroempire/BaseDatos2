@@ -1,7 +1,7 @@
+
+import javax.security.auth.login.Configuration;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import paquete.Person1;
+import org.hibernate.*;
 
 public class Main {
 	
@@ -12,7 +12,7 @@ public class Main {
 		
 		@SuppressWarnings("deprecation")
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-    	Session session = sessionFactory.openSession();
+                Session session = sessionFactory.openSession();
 		session.beginTransaction();
               
 	    session.save(p1);

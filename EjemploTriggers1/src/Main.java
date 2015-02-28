@@ -1,19 +1,17 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.tutorial.domain.Department;
 //import org.hibernate.tutorial.domain.Department;
-import org.hibernate.tutorial.domain.Employee;
 import java.sql.Date;
 
 public class Main {
 	 
 	public static void main(String[] args) 
 	{
-		@SuppressWarnings("deprecation")
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
+            @SuppressWarnings("deprecation")
+            SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
 	   
 	    Department department = new Department();
 	    department.setDepartmentName("Sales");
@@ -28,9 +26,9 @@ public class Main {
 	    session.save(emp1);
 	    session.save(emp2);
 		
-		session.getTransaction().commit();
-		session.close();
-		sessionFactory.close();
+            session.getTransaction().commit();
+            session.close();
+            sessionFactory.close();
 	}
 
 }
