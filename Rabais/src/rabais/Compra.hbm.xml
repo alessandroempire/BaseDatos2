@@ -33,8 +33,9 @@
                   AFTER INSERT ON COMPRA
                   FOR EACH ROW
                   BEGIN
-                      UPDATE PROMOCION
-                      SET PROMOCION_DESC_BREVE = "PRUEBAAA"
+                      UPDATE OFERTA
+                      SET OFERTA_CANTIDAD = 1
+                      where OFERTA_MONTO_OFERTADO = 91
                   END;
         </create>
         <drop>
