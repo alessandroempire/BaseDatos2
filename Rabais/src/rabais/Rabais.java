@@ -189,6 +189,7 @@ public class Rabais {
         o1.setPromocion(p1);
         o2.setPromocion(p2);
         o3.setPromocion(p3);
+        
             //a cada oferta le agregmaos la empresa
         o1.setEmpresa(e1);
         o2.setEmpresa(e2);
@@ -238,47 +239,48 @@ public class Rabais {
         setc3.add(p3);
         c3.setPromocion(setc3);
         
+        //los que compran promociones
+        u1.setPromociones_compradas(setc1);
+        u2.setPromociones_compradas(setc2);
+        u3.setPromociones_compradas(setc3);
+        
         //Compra
-        Compra compra1 = new Compra(1, p1);
-        Compra compra2 = new Compra(1, p2);
-        Compra compra3 = new Compra(1, p3);
+        Compra compra1 = new Compra(1, u1, p1);
+        //Compra compra12 = new Compra(1, u1, p2);
+        Compra compra2 = new Compra(2, u2, p2);
+        //Compra compra21 = new Compra(1, u2, p1);
+        Compra compra3 = new Compra(3, u3, p3);
         
         //Hacer los sets correctos
             //de usuario a compra
         Set setcom1 = new HashSet();
         setcom1.add(compra1);
+        //setcom1.add(compra12);
         u1.setCompra(setcom1);
         
         Set setcom2 = new HashSet();
         setcom2.add(compra2);
+        //setcom2.add(compra21);
         u2.setCompra(setcom2);
         
         Set setcom3 = new HashSet();
         setcom3.add(compra3);
         u3.setCompra(setcom3);
         
-            //de compra a usuario
-        Set usercom1 = new HashSet();
-        usercom1.add(u1);
-        compra1.setCompradores(usercom1);
-        
-        Set usercom2 = new HashSet();
-        usercom2.add(u2);
-        compra2.setCompradores(usercom2);
-        
-        Set usercom3 = new HashSet();
-        usercom3.add(u3);
-        compra3.setCompradores(usercom3);
-        
-            //de compra a promocion
-        compra1.setPromocion(p1);
-        compra2.setPromocion(p2);
-        compra3.setPromocion(p3);
-        
             //de promocion a compra
-        p1.setComprado_por(compra1);
-        p2.setComprado_por(compra2);
-        p3.setComprado_por(compra3);
+        Set compraset1 = new HashSet();
+        compraset1.add(compra1);
+        p1.setComprado_por(compraset1);
+        
+        Set compraset2 = new HashSet();
+        compraset2.add(compra2);
+        p2.setComprado_por(compraset2);
+        
+        Set compraset3 = new HashSet();
+        compraset3.add(compra3);
+        p3.setComprado_por(compraset3);
+        
+        //Abrir session
         
         @SuppressWarnings("deprecation")
         SessionFactory sessionFactory = new Configuration().configure("rabais/hibernate.cfg.xml").buildSessionFactory();

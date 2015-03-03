@@ -53,13 +53,18 @@
         <key> 
             <column name="promocion_id" not-null="false"/>
         </key>
-        <many-to-many column="usuario_id" class="Usuario"/>
+        <many-to-many column="usuario_compradas_id" class="Usuario"/>
     </set>
     
     <!-- este one to one le quite el constrained="true" -->
     <one-to-one name="ofertadas" class="Oferta" constrained="true"/>
   
-    <one-to-one name="comprado_por" class="Compra" constrained="true"/>
+    <set name="comprado_por" table="COMPRA" fetch="select">
+        <key>
+            <column name="promocion_compra_id" not-null="false"/>
+        </key>
+        <one-to-many class="Compra"/>
+    </set>
     
   </class>
 </hibernate-mapping>

@@ -41,7 +41,7 @@
         </component>  
       </component>
 
-      <set name="tarjetas" table="USER_TARJETA_CREDITO_LIST" inverse="true" lazy="true" fetch="select">
+      <set name="tarjetas" table="TARJETA_CREDITO" inverse="true" lazy="true" fetch="select">
           <key>
               <column name="usuario_id" not-null="true"/>
           </key>
@@ -50,7 +50,7 @@
       
       <set name="promociones_compradas" table="USER_COMPRA_PROMOCIONES"> 
           <key> 
-              <column name="usuario_id" not-null="false"/>
+              <column name="usuario_compradas_id" not-null="false"/>
           </key>
           <many-to-many column="promocion_id" class="Promocion"/>
       </set>   
@@ -65,13 +65,12 @@
           <many-to-many column="tiene_amigo_id" class="Usuario"/>
       </set>         
           
-      <set name="compra" table="USUARIO_COMPRAS" >
-          <key> 
+      <set name="compra" table="COMPRA" inverse="true" lazy="true" fetch="select" >
+          <key>
               <column name="usuario_compra_id" not-null="false"/>
           </key>
-          <many-to-many column="compra_id" class="Compra"/>
+          <one-to-many class="Compra"/>
       </set>
-
          
   </class>
 </hibernate-mapping>

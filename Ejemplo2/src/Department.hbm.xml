@@ -3,10 +3,11 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="org.hibernate.tutorial.domain">
+<hibernate-mapping>
  
     <class name="Department" table="DEPARTMENT">
-        <id name="departmentId" type="java.lang.Long" column="DEPARTMENT_ID">
+        
+        <id name="departmentId" type="java.lang.Long" column="DEPARTMENT_IDD">
             <generator class="native"></generator>
         </id>
          
@@ -18,11 +19,12 @@
  		que será justo cuando los seleccione -->
  		<!-- Con inverse="true" se dice quien es el propietario de la relación, en este caso
  		     la clase propietaria de la relación es empleado. -->
-        <set name="employees" table="employee" inverse="true" lazy="true" fetch="select">
+        <set name="employees" table="EMPLOYEE" fetch="select">
             <key>
                 <column name="department_id" not-null="true"/>
             </key>
-            <one-to-many class="org.hibernate.tutorial.domain.Employee"></one-to-many>
+            <one-to-many class="Employee"></one-to-many>
         </set>
+        
     </class>
 </hibernate-mapping>

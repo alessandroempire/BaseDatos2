@@ -1,10 +1,10 @@
-package org.hibernate.tutorial.domain;
+
 import java.util.Set;
 
 public class Department {
  
     private Long departmentId;
-	private String departmentName;
+    private String departmentName;
     private Set<Employee> employees; //El dpto tiene un set de empleados
      
     public Long getDepartmentId() {

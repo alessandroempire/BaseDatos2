@@ -1,8 +1,6 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.tutorial.domain.Department;
-import org.hibernate.tutorial.domain.Employee;
 import java.sql.Date;
 
 public class Main {
@@ -16,14 +14,17 @@ public class Main {
 	   
 	    Department department = new Department();
 	    department.setDepartmentName("Sales");
-	    session.save(department);
+            Department department22 = new Department();
+	    department.setDepartmentName("Sales22");
 	         
 	    Employee emp1 = new Employee("Nina", "Mayers", new Date(121212),"111");
 	    Employee emp2 = new Employee("Tony", "Almeida", new Date(121212),"222");
 	 
 	    emp1.setDepartment(department);
-	    emp2.setDepartment(department);
-	         
+	    emp2.setDepartment(department22);
+	    
+            session.save(department);
+            session.save(department22);
 	    session.save(emp1);
 	    session.save(emp2);
 

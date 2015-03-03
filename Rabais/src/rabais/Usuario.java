@@ -37,7 +37,7 @@ public class Usuario {
     private Set<Usuario> tiene_amigo = new HashSet<Usuario>();
     private Set<Usuario> es_amigo = new HashSet<Usuario>();
     //Asocicacion compra con clase asociacion
-    private Set<Compra> compra = new HashSet();
+    private Set<Compra> compra = new HashSet<Compra>();
     
     //Constructor
     public Usuario(){}

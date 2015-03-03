@@ -1,4 +1,4 @@
-package org.hibernate.tutorial.domain;
+
 import java.sql.Date;
 
 public class Employee {

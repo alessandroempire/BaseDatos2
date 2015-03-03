@@ -38,7 +38,7 @@ public class Promocion {
     //Asociacion Oferta
     private Oferta ofertadas;
     //Asociacion compra con clase asociacion
-    private Compra comprado_por; 
+    private Set<Compra> comprado_por = new HashSet<Compra>();
     
     //Constructor
     public Promocion(){}
@@ -190,11 +190,11 @@ public class Promocion {
         this.ofertadas = ofertadas;
     }
 
-    public Compra getComprado_por() {
+    public Set<Compra> getComprado_por() {
         return comprado_por;
     }
 
-    public void setComprado_por(Compra comprado_por) {
+    public void setComprado_por(Set<Compra> comprado_por) {
         this.comprado_por = comprado_por;
     }
 

@@ -10,20 +10,19 @@
          polymorphism="implicit" 
          select-before-update="false">
       
-      <id name="id" column="COMPRA_ID">
+      <id name="id" column="COMPRA_ID" >
           <generator class="native"/>
       </id>
       
       <property name="cantidad" column="CANTIDAD" />
      
-      <set name="compradores" table="COMPRADORES_USUARIOS" >
-        <key> 
-            <column name="compra_id" not-null="true"/>
-        </key>
-        <many-to-many column="usuario_compra_id" class="Usuario"/>
-      </set>
+      <many-to-one name="compradores" class="Usuario" >
+          <column name="usuario_compra_id" not-null="false"/>
+      </many-to-one>
       
-      <one-to-one name="promocion" class="Promocion" cascade="save-update" fetch="join"/>
+      <many-to-one name="promocion" class="Promocion" >
+          <column name="promocion_compra_id" not-null="false"/>
+      </many-to-one>
       
   </class>
       
@@ -33,15 +32,17 @@
                   AFTER INSERT ON COMPRA
                   FOR EACH ROW
                   BEGIN
-                      DECLARE IDCOMPRA INTEGER;
-            
-                      SELECT DISTINCT OFERTA.OFERTA_ID INTO IDCOMPRA
-                      FROM OFERTA JOIN PROMOCION JOIN COMPRA
-                      WHERE NEW.COMPRA_ID = COMPRA.COMPRA_ID;
+                      DECLARE OFFER VARCHAR(50);
+                      
+                      SELECT P.OFERTA_ID INTO OFFER
+                      FROM COMPRA C JOIN OFERTA P
+                        ON P.OFERTA_ID=C.promocion_compra_id
+                        WHERE C.COMPRA_ID = NEW.COMPRA_ID;
+
             
                       UPDATE OFERTA
                       SET OFERTA_CANTIDAD = OFERTA_CANTIDAD - NEW.CANTIDAD
-                      where OFERTA_ID = NEW.OFERTA_ID;
+                      where ? = NEW.OFERTA_ID;
                   END;
         </create>
         <drop>
