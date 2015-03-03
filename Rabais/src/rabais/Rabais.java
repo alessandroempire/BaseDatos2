@@ -94,6 +94,12 @@ public class Rabais {
     public static void main(String[] args) {
         System.out.println("Rabais!");
         
+//        FechaActual fecha = new FechaActual(new Date(0, 3, 1));
+//        System.out.println(fecha.toString());
+//        fecha.nextDay();
+//        System.out.println(fecha.toString());
+//        System.exit(1);
+        
         //Tarjeta de credito
         TarjetaCredito t1 = new TarjetaCredito("123455", "ale", "MASTERCARD");
         TarjetaCredito t2 = new TarjetaCredito("876432", "cat", "MASTERCARD");

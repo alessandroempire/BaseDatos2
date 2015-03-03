@@ -10,7 +10,7 @@
          polymorphism="implicit" 
          select-before-update="false">
       
-      <id name="id" column="COMPRA">
+      <id name="id" column="COMPRA_ID">
           <generator class="native"/>
       </id>
       
@@ -23,7 +23,7 @@
         <many-to-many column="usuario_compra_id" class="Usuario"/>
       </set>
       
-      <one-to-one name="promocion" class="Promocion" cascade="save-update"/>
+      <one-to-one name="promocion" class="Promocion" cascade="save-update" fetch="join"/>
       
   </class>
       
@@ -33,9 +33,15 @@
                   AFTER INSERT ON COMPRA
                   FOR EACH ROW
                   BEGIN
+                      DECLARE IDCOMPRA INTEGER;
+            
+                      SELECT DISTINCT OFERTA.OFERTA_ID INTO IDCOMPRA
+                      FROM OFERTA JOIN PROMOCION JOIN COMPRA
+                      WHERE NEW.COMPRA_ID = COMPRA.COMPRA_ID;
+            
                       UPDATE OFERTA
-                      SET OFERTA_CANTIDAD = 1
-                      where OFERTA_MONTO_OFERTADO = 91
+                      SET OFERTA_CANTIDAD = OFERTA_CANTIDAD - NEW.CANTIDAD
+                      where OFERTA_ID = NEW.OFERTA_ID;
                   END;
         </create>
         <drop>

@@ -36,4 +36,9 @@ public class FechaActual {
         cal.roll(Calendar.DATE, true);
         this.fecha_actual = new Date(cal.getTime().getTime());
     }
+
+    @Override
+    public String toString() {
+        return "FechaActual{" + "fecha_actual=" + fecha_actual.toString() + '}';
+    }
 }
