@@ -32,17 +32,16 @@
                   AFTER INSERT ON COMPRA
                   FOR EACH ROW
                   BEGIN
-                      DECLARE OFFER VARCHAR(50);
+                      DECLARE OFFER INTEGER;
                       
-                      SELECT P.OFERTA_ID INTO OFFER
+                      SELECT DISTINCT P.OFERTA_ID INTO OFFER
                       FROM COMPRA C JOIN OFERTA P
                         ON P.OFERTA_ID=C.promocion_compra_id
                         WHERE C.COMPRA_ID = NEW.COMPRA_ID;
 
-            
                       UPDATE OFERTA
                       SET OFERTA_CANTIDAD = OFERTA_CANTIDAD - NEW.CANTIDAD
-                      where ? = NEW.OFERTA_ID;
+                      where OFFER = NEW.COMPRA_ID;
                   END;
         </create>
         <drop>

@@ -247,9 +247,9 @@ public class Rabais {
         //Compra
         Compra compra1 = new Compra(1, u1, p1);
         //Compra compra12 = new Compra(1, u1, p2);
-        Compra compra2 = new Compra(2, u2, p2);
+        Compra compra2 = new Compra(1, u2, p2);
         //Compra compra21 = new Compra(1, u2, p1);
-        Compra compra3 = new Compra(3, u3, p3);
+        Compra compra3 = new Compra(1, u3, p3);
         
         //Hacer los sets correctos
             //de usuario a compra
