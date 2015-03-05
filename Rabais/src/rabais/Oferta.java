@@ -147,7 +147,7 @@ public class Oferta {
     }
 
         //Metodo para el patron
-    public void doAction(FechaActual date){
+    public void doAction(Date date){
         state.doAction(this, date);
     }
 }

@@ -6,6 +6,8 @@
 
 package rabais;
 
+import java.sql.Date;
+
 /**
  * @Autores:
  * Alessandro La Corte
@@ -13,6 +15,6 @@ package rabais;
  */
 public interface State {
     
-    public void doAction(Oferta offer, FechaActual date);
+    public void doAction(Oferta offer, Date date);
     
 }

@@ -144,16 +144,17 @@ public class Rabais {
         
         //Oferta
         date = new Date(1, 0, 1);
-        Date date1 = new Date(1, 0, 3);
+        Date dateI = new Date(1, 0, 2);
+        Date date1 = new Date(1, 0, 4);
         Date date2 = new Date(1, 1, 5);
         Date date3 = new Date(1, 1, 10);
         Date date4 = new Date(2, 1, 1);
         Date date5 = new Date(2, 1, 1);
         
-        DateTuple tuple1 = new DateTuple(date, date1);
+        DateTuple tuple1 = new DateTuple(dateI, date1);
         DateTuple tuple12 = new DateTuple(date2, date3);
-        DateTuple tuple4 = new DateTuple(date, date4);
-        DateTuple tuple5 = new DateTuple(date, date5);
+        DateTuple tuple4 = new DateTuple(dateI, date4);
+        DateTuple tuple5 = new DateTuple(dateI, date5);
         
         Set set4 = new HashSet();
         Set set42 = new HashSet();
@@ -298,9 +299,6 @@ public class Rabais {
         compraset3.add(compra3);
         p3.setComprado_por(compraset3);
         
-        //Simular la fecha y probar el patron state
-        FechaActual fecha = new FechaActual(new Date(0, 3, 1));
-        
         //Abrir session
         
         @SuppressWarnings("deprecation")
@@ -349,6 +347,14 @@ public class Rabais {
         
         //Consulta3
         consulta3("electrodomestico", session);
+        
+        //Simulacion de las fechas
+        //Simular la fecha y probar el patron state
+        //FechaActual fecha = new FechaActual(new Date(1, 0, 3));
+        o1.doAction(new Date(1, 0, 3));
+        //fecha.nextDay();
+        o1.doAction(new Date(1, 0, 5));
+        
         
         session.close();
         sessionFactory.close();
