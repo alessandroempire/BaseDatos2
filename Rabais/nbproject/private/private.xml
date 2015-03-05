@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/TarjetaCredito.hbm.xml</file>
-            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Rabais.java</file>
-            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Usuario.hbm.xml</file>
-            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Oferta.hbm.xml</file>
-            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Compra.hbm.xml</file>
+            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Deshabilitado.java</file>
+            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Habilitado.java</file>
+            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/State.java</file>
+            <file>file:/home/alessandro/BaseDatos2/Rabais/src/rabais/Oferta.java</file>
         </group>
     </open-files>
 </project-private>

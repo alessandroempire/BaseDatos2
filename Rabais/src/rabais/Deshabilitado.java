@@ -13,4 +13,11 @@ package rabais;
  */
 public class Deshabilitado implements State{
     
+    public void doAction(Oferta offer, FechaActual date){
+        System.out.println("Promocion no vigente!");
+        
+        
+        
+    }
+    
 }

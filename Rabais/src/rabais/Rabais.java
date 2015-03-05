@@ -143,15 +143,33 @@ public class Rabais {
         Empresa e3 = new Empresa("empresa3", "comida", "0426", "de@gmail.com", 60, d1);
         
         //Oferta
-        date = new Date(2015, 17, 2);
+        date = new Date(1, 0, 1);
+        Date date1 = new Date(1, 0, 3);
+        Date date2 = new Date(1, 1, 5);
+        Date date3 = new Date(1, 1, 10);
+        Date date4 = new Date(2, 1, 1);
+        Date date5 = new Date(2, 1, 1);
+        
+        DateTuple tuple1 = new DateTuple(date, date1);
+        DateTuple tuple12 = new DateTuple(date2, date3);
+        DateTuple tuple4 = new DateTuple(date, date4);
+        DateTuple tuple5 = new DateTuple(date, date5);
+        
         Set set4 = new HashSet();
-        Date date1 = new Date(2015, 17, 3);
-        set4.add(date1);
+        Set set42 = new HashSet();
+        Set set43 = new HashSet();
+        
+        set4.add(tuple1);
+        set4.add(tuple12);
+        set42.add(tuple4);
+        set43.add(tuple5);
+        
+        //Crear las ofertas
         Oferta o1 = new Oferta(date, 10, 80, 2, set4, e1, null);
         date = new Date(2013, 1, 10);
-        Oferta o2 = new Oferta(date, 20, 91, 12, set4, e2, null);
+        Oferta o2 = new Oferta(date, 20, 91, 12, set42, e2, null);
         date = new Date(2015, 21, 9);
-        Oferta o3 = new Oferta(date, 3, 76, 32, set4, e3, null);
+        Oferta o3 = new Oferta(date, 3, 76, 32, set43, e3, null);
         
         //Promocion
         Promocion p1 = new Promocion("depilado", "des breve", "des comple", 
@@ -279,6 +297,9 @@ public class Rabais {
         Set compraset3 = new HashSet();
         compraset3.add(compra3);
         p3.setComprado_por(compraset3);
+        
+        //Simular la fecha y probar el patron state
+        FechaActual fecha = new FechaActual(new Date(0, 3, 1));
         
         //Abrir session
         

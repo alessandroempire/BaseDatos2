@@ -12,6 +12,11 @@ import java.util.Calendar;
  *
  * @author alessandro
  */
+
+/*
+    Esta clase simula la fecha actual
+    Es como el System.Date 
+*/
 public class FechaActual {
     private Date fecha_actual;
 

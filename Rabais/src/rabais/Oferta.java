@@ -19,22 +19,23 @@ import java.util.Set;
  * Empresa 1-----------* Oferta 1--------------1 Promocion 
  */
 public class Oferta {
-    private Long      id; //clave postiza 
-    private Date      fecha_publicacion;
-    private int       cantidad;
-    private double    monto_ofertado;
-    private int       porcentaje_descuento;
-    private Set<Date> fecha_de_vigencia;
+    private Long           id; //clave postiza 
+    private Date           fecha_publicacion;
+    private int            cantidad;
+    private double         monto_ofertado;
+    private int            porcentaje_descuento;
+    private Set<DateTuple> fecha_de_vigencia;
     //Asociacion Oferta
-    private Empresa   empresa;
-    private Promocion promocion; 
+    private Empresa        empresa;
+    private Promocion      promocion; 
+    private State          state = new Deshabilitado(); 
 
     //constructor
     public Oferta(){}
     
     //Constructor
     public Oferta(Date fecha_publicacion, int cantidad, double monto_ofertado, 
-            int porcentaje_descuento, Set<Date> fecha_de_vigencia, 
+            int porcentaje_descuento, Set<DateTuple> fecha_de_vigencia, 
             Empresa empresa, Promocion promocion) {
         this.fecha_publicacion = fecha_publicacion;
         this.cantidad = cantidad;
@@ -48,7 +49,7 @@ public class Oferta {
     //Constructor
     public Oferta(Long id, Date fecha_publicacion, int cantidad, 
             double monto_ofertado, int porcentaje_descuento, 
-            Set<Date> fecha_de_vigencia, Empresa empresa, Promocion promocion) {
+            Set<DateTuple> fecha_de_vigencia, Empresa empresa, Promocion promocion) {
         this.id = id;
         this.fecha_publicacion = fecha_publicacion;
         this.cantidad = cantidad;
@@ -100,11 +101,11 @@ public class Oferta {
         this.porcentaje_descuento = porcentaje_descuento;
     }
 
-    public Set<Date> getFecha_de_vigencia() {
+    public Set<DateTuple> getFecha_de_vigencia() {
         return fecha_de_vigencia;
     }
 
-    public void setFecha_de_vigencia(Set<Date> fecha_de_vigencia) {
+    public void setFecha_de_vigencia(Set<DateTuple> fecha_de_vigencia) {
         this.fecha_de_vigencia = fecha_de_vigencia;
     }
 
@@ -124,6 +125,13 @@ public class Oferta {
         this.promocion = promocion;
     }
 
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
     
     @Override
     public String toString() {
@@ -137,5 +145,9 @@ public class Oferta {
                // ", promocion=" + promocion + 
                 '}';
     }
-    
+
+        //Metodo para el patron
+    public void doAction(FechaActual date){
+        state.doAction(this, date);
+    }
 }

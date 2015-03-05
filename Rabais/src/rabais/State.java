@@ -13,4 +13,6 @@ package rabais;
  */
 public interface State {
     
+    public void doAction(Oferta offer, FechaActual date);
+    
 }

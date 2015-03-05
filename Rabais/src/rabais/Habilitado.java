@@ -13,4 +13,10 @@ package rabais;
  */
 public class Habilitado implements State{
     
+    public void doAction(Oferta offer, FechaActual date){
+        System.out.println("Promocion vigente!");
+        
+        
+    }
+    
 }

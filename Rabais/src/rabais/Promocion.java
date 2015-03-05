@@ -62,18 +62,6 @@ public class Promocion {
         this.puntaje_total         = puntaje_total;
     }
 
-    public Promocion(String nombre_promocion, String descripcion_breve, String descripcion_completa, String descripcion_adicional, double monto_original, Set<String> palabras_claves, Set<String> pagina_web, int cantidad_disponible, double puntaje_total, Oferta ofertadas) {
-        this.nombre_promocion = nombre_promocion;
-        this.descripcion_breve = descripcion_breve;
-        this.descripcion_completa = descripcion_completa;
-        this.descripcion_adicional = descripcion_adicional;
-        this.monto_original = monto_original;
-        this.palabras_claves = palabras_claves;
-        this.pagina_web = pagina_web;
-        this.cantidad_disponible = cantidad_disponible;
-        this.puntaje_total = puntaje_total;
-        this.ofertadas = ofertadas;
-    }
 
     //Getters y Setters
     
